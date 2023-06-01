@@ -7,6 +7,9 @@ import '../widgets/app_bar.dart';
 import '../widgets/question_details_item.dart';
 
 class CatechismDetailsScreen extends StatelessWidget {
+  /// The CatechismDetailsScreen class is used to create a screen that displays
+  /// a QuestionDetailsItem for a given question as well as the catechism
+  /// app bar.
   static const routeName = '/catechism-details';
 
   final List<String> titles;

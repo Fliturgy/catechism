@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import '../models/info_screen_data.dart';
 
 class CatechismDrawer extends StatelessWidget {
+  /// The CatechismDrawer class is used to create a catechism drawer, which
+  /// contains any optional additional information screens (e.g. about, help).
   final List<InfoScreenData> infoScreens;
 
   CatechismDrawer({

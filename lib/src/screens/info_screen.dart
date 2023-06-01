@@ -5,6 +5,9 @@ import '../models/info_screen_data.dart';
 import '../widgets/app_bar.dart';
 
 class InfoScreen extends StatelessWidget {
+  /// The InfoScreen class is used to create a screen that displays an optional
+  /// additional information screen (e.g. about, help) as well as the catechism
+  /// app bar.
   final List<String> titles;
   final CatechismConfiguration configuration;
   final InfoScreenData infoScreenData;

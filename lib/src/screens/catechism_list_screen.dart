@@ -9,6 +9,8 @@ import '../widgets/drawer.dart';
 import '../widgets/question_list_item.dart';
 
 class CatechismListScreen extends StatelessWidget {
+  /// The CatechismListScreen class is used to create a screen that displays
+  /// the list of questions as well as the catechism app bar.
   static const routeName = '/';
 
   final List<String> titles;

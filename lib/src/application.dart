@@ -10,6 +10,7 @@ import './screens/catechism_list_screen.dart';
 import './screens/info_screen.dart';
 
 class CatechismApp extends StatelessWidget {
+  /// The CatechismApp class is used to create a catechism app.
   final List<Question> questions;
   final List<String> titles;
   final ThemeData themeData;

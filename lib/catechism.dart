@@ -1,3 +1,4 @@
+/// A library for creating catechism apps using Flutter.
 library;
 
 export 'src/application.dart';

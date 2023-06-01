@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class CatechismAppBar extends StatelessWidget implements PreferredSizeWidget {
+  /// The CatechismAppBar class is used to create a catechism app bar,
+  /// containing the title of the catechism app as well as either the back
+  /// button or the menu button depending on the context.
   final List<String> titles;
   final bool hasBackButton;
 

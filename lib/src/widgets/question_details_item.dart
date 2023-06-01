@@ -4,6 +4,8 @@ import '../configuration.dart';
 import '../models/question.dart';
 
 class QuestionDetailsItem extends StatelessWidget {
+  /// The QuestionDetailsItem class is used to display the details of a
+  /// question: the title, the number, the question, and the answer.
   final Question question;
   final CatechismConfiguration configuration;
 

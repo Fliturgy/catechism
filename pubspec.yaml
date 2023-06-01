@@ -5,7 +5,7 @@ description: A generic catechism app framework.
 homepage: https://github.com/fliturgy/catechism
 
 environment:
-  sdk: '^3.0.0'
+  sdk: '^3.0.2'
 
 dependencies:
   flutter:
@@ -15,5 +15,8 @@ dependencies:
     sdk: flutter
 
 dev_dependencies:
+  lints: ^2.0.0
+  test: ^1.21.0
   flutter_test:
     sdk: flutter
+  

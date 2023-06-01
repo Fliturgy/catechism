@@ -1,0 +1,19 @@
+name: catechism
+version: 0.0.1
+
+description: A generic catechism app framework.
+homepage: https://github.com/fliturgy/catechism
+
+environment:
+  sdk: '^3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  provider: ^6.0.5
+  flutter_localizations:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter

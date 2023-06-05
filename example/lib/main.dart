@@ -7,17 +7,51 @@ final List<Question> questions = [
     title: '',
     question: 'What is this?',
     answer: 'This is an example of a catechism app.',
+    references: [
+      'Source 1',
+      'Source XYZ',
+    ],
+    image: 'assets/graphics/question-mark.png',
+  ),
+  Question(
+    id: 2,
+    title: '',
+    question: 'Why a catechism?',
+    answer: 'It\'s an effective learning tool.',
   ),
 ];
 
 final ThemeData themeData = ThemeData(
-  primarySwatch: Colors.blue,
-  visualDensity: VisualDensity.adaptivePlatformDensity,
+  scaffoldBackgroundColor: Colors.white,
+  appBarTheme: const AppBarTheme(
+    color: Colors.white,
+  ),
+  bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+    backgroundColor: Colors.white,
+  ),
 );
 
 final configuration = CatechismConfiguration(
-  displayQuestionNumberInDetails: false,
-  displayQuestionTitleInDetails: true,
+  displayQuestionNumberInDetails: true,
+  displayQuestionTitleInDetails: false,
+  tabs: const [
+    CatechismTabData(
+      type: CatechismTabType.question,
+      label: 'Question',
+      icon: Icons.question_answer_outlined,
+    ),
+    CatechismTabData(
+      type: CatechismTabType.scripture,
+      label: 'References',
+      icon: Icons.menu_book,
+    ),
+    CatechismTabData(
+      type: CatechismTabType.image,
+      label: 'Image',
+      icon: Icons.image,
+    ),
+  ],
+  showTabBar: true,
 );
 
 final List<Locale> locales = [

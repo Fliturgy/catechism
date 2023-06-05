@@ -34,7 +34,6 @@ class CatechismAppBar extends StatelessWidget implements PreferredSizeWidget {
               // },
             )
           : null,
-      backgroundColor: Colors.white,
       elevation: 0,
       iconTheme: IconThemeData(color: Theme.of(context).primaryColor),
       toolbarHeight: titles.length * 60.0,

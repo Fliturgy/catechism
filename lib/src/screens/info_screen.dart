@@ -21,7 +21,6 @@ class InfoScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: CatechismAppBar(
         titles,
         hasBackButton: true,

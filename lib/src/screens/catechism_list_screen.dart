@@ -28,7 +28,6 @@ class CatechismListScreen extends StatelessWidget {
     final questions = Provider.of<Questions>(context).questions;
 
     return Scaffold(
-      backgroundColor: Colors.white,
       drawer: CatechismDrawer(
         infoScreens: infoScreens,
       ),

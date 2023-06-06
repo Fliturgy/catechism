@@ -20,6 +20,7 @@ class InfoScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    /// The build method is used to create the widget.
     return Scaffold(
       appBar: CatechismAppBar(
         titles,

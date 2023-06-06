@@ -19,6 +19,7 @@ class CatechismAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
+    /// The build method is used to create the widget.
     return AppBar(
       centerTitle: true,
       leading: hasBackButton

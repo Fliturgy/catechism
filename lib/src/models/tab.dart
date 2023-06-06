@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 enum CatechismTabType {
+  /// The CatechismTabType enum is used to configure the catechism app's tabs.
   question,
   scripture,
   image,

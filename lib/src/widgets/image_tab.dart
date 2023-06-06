@@ -10,6 +10,8 @@ class ImageTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    /// If the question has an image, display it. Otherwise, return an empty
+    /// container.
     return question.image != null
         ? Center(
             child: Column(

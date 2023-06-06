@@ -27,6 +27,8 @@ class CatechismDetailsScreen extends StatefulWidget {
 }
 
 class _CatechismDetailsScreenState extends State<CatechismDetailsScreen> {
+  /// The _CatechismDetailsScreenState class is used to create the state for
+  /// the CatechismDetailsScreen class.
   late CatechismTabData _selectedTab;
 
   @override
@@ -44,6 +46,8 @@ class _CatechismDetailsScreenState extends State<CatechismDetailsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    /// The build method is used to build the widget tree for the
+    /// CatechismDetailsScreen class.
     final questions = Provider.of<Questions>(context).questions;
     final questionId = ModalRoute.of(context)?.settings.arguments as int;
 

@@ -21,6 +21,8 @@ class QuestionDetailsItem extends StatelessWidget {
   });
 
   Widget buildTabContent(context) {
+    /// The buildTabContent method is used to build the content of the tab
+    /// based on the selected tab.
     switch (selectedTab.type) {
       case CatechismTabType.image:
         return ImageTab(question);
@@ -41,6 +43,7 @@ class QuestionDetailsItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    /// The build method is used to build the widget.
     return SingleChildScrollView(
       child: Padding(
         padding: const EdgeInsets.symmetric(

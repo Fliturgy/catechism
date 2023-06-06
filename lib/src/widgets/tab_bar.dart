@@ -21,6 +21,7 @@ class CatechismTabBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    /// The build method is used to build the widget.
     return BottomNavigationBar(
       onTap: selectTab,
       elevation: 0,

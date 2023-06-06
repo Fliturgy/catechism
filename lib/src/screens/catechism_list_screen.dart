@@ -25,6 +25,7 @@ class CatechismListScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    /// The build method is used to create the widget.
     final questions = Provider.of<Questions>(context).questions;
 
     return Scaffold(

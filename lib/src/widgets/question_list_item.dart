@@ -17,6 +17,7 @@ class QuestionListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    /// The build method is used to create the widget.
     return ListTile(
       // leading: Text(
       //   question.id.toString(),

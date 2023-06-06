@@ -16,6 +16,7 @@ class QuestionTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    /// The build method is used to build the widget.
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [

@@ -13,6 +13,7 @@ class CatechismDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    /// The build method is used to create the widget.
     return Drawer(
       child: Column(
         children: <Widget>[

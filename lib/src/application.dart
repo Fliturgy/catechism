@@ -29,6 +29,7 @@ class CatechismApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    /// The build method is used to create the widget.
     Map<String, WidgetBuilder> routes = {
       CatechismListScreen.routeName: (context) => CatechismListScreen(
             titles: titles,

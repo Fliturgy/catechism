@@ -6,9 +6,15 @@ import '../models/question.dart';
 class QuestionTab extends StatelessWidget {
   /// The QuestionTab class is used to display the question and answer of a
   /// catechism question.
+
+  /// The question property is used to create the question.
   final Question question;
+
+  /// The configuration property is used to create the configuration.
   final CatechismConfiguration configuration;
 
+  /// The QuestionTab constructor is used to create a new instance of the
+  /// QuestionTab class.
   QuestionTab(
     this.question, {
     required this.configuration,

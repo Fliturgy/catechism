@@ -4,8 +4,12 @@ import '../models/question.dart';
 
 class ImageTab extends StatelessWidget {
   /// The ImageTab class is used to display the image for a catechism question.
+
+  /// The question property is used to create the question.
   final Question question;
 
+  /// The ImageTab constructor is used to create a new instance of the
+  /// ImageTab class.
   ImageTab(this.question);
 
   @override

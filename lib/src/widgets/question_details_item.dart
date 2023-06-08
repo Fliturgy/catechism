@@ -10,10 +10,18 @@ import '../widgets/scripture_tab.dart';
 class QuestionDetailsItem extends StatelessWidget {
   /// The QuestionDetailsItem class is used to display the details of a
   /// question: the title, the number, the question, and the answer.
+
+  /// The question property is used to create the question.
   final Question question;
+
+  /// The configuration property is used to create the configuration.
   final CatechismConfiguration configuration;
+
+  /// The selectedTab property is used to create the selected tab.
   final CatechismTabData selectedTab;
 
+  /// The QuestionDetailsItem constructor is used to create a new instance of
+  /// the QuestionDetailsItem class.
   QuestionDetailsItem({
     required this.question,
     required this.configuration,

@@ -11,13 +11,27 @@ import './screens/info_screen.dart';
 
 class CatechismApp extends StatelessWidget {
   /// The CatechismApp class is used to create a catechism app.
+
+  /// The questions property is used to create the list of questions.
   final List<Question> questions;
+
+  /// The titles property is used to create the list of titles.
   final List<String> titles;
+
+  /// The themeData property is used to create the theme data.
   final ThemeData themeData;
+
+  /// The configuration property is used to create the configuration.
   final CatechismConfiguration configuration;
+
+  /// The supportedLocales property is used to create the list of supported
+  /// locales.
   final List<Locale> supportedLocales;
+
+  /// The infoScreens property is used to create the list of info screens.
   final List<InfoScreenData> infoScreens;
 
+  /// The CatechismApp constructor is used to create a catechism app.
   CatechismApp({
     required this.questions,
     required this.titles,

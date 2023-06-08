@@ -8,10 +8,20 @@ class InfoScreen extends StatelessWidget {
   /// The InfoScreen class is used to create a screen that displays an optional
   /// additional information screen (e.g. about, help) as well as the catechism
   /// app bar.
+
+  /// The titles property is used to create the titles for the app bar.
   final List<String> titles;
+
+  /// The configuration property is used to create the configuration for the
+  /// InfoScreen class.
   final CatechismConfiguration configuration;
+
+  /// The infoScreenData property is used to create the info screen data for the
+  /// InfoScreen class.
   final InfoScreenData infoScreenData;
 
+  /// The InfoScreen constructor is used to create a new instance of the
+  /// InfoScreen class.
   InfoScreen({
     required this.titles,
     required this.configuration,

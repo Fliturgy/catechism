@@ -6,9 +6,15 @@ import '../models/question.dart';
 class ScriptureTab extends StatelessWidget {
   /// The ScriptureTab class is used to display the scripture references for a
   /// catechism question.
+
+  /// The question property is used to create the question.
   final Question question;
+
+  /// The configuration property is used to create the configuration.
   final CatechismConfiguration configuration;
 
+  /// The ScriptureTab constructor is used to create a new instance of the
+  /// ScriptureTab class.
   ScriptureTab(
     this.question, {
     required this.configuration,

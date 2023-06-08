@@ -7,9 +7,16 @@ import '../screens/catechism_details_screen.dart';
 class QuestionListItem extends StatelessWidget {
   /// The QuestionListItem class is used to create a single list item for a
   /// given question for the catechism list screen.
+
+  /// The question property is used to create the question for the list item.
   final Question question;
+
+  /// The configuration property is used to create the configuration for the
+  /// list item.
   final CatechismConfiguration configuration;
 
+  /// The QuestionListItem constructor is used to create a new instance of the
+  /// QuestionListItem class.
   QuestionListItem(
     this.question, {
     required this.configuration,

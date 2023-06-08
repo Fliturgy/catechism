@@ -7,11 +7,21 @@ import '../models/tab.dart';
 class CatechismTabBar extends StatelessWidget {
   /// The CatechismTabBar class is used to display the tabs at the bottom of the
   /// catechism app.
+
+  /// The question property is used to create the question.
   final Question question;
+
+  /// The selectTab property is used to create the selectTab method.
   final void Function(int)? selectTab;
+
+  /// The selectedTab property is used to create the selectedTab.
   final CatechismTabData selectedTab;
+
+  /// The configuration property is used to create the configuration.
   final CatechismConfiguration configuration;
 
+  /// The CatechismTabBar constructor is used to create a new instance of the
+  /// CatechismTabBar class.
   CatechismTabBar(
     this.question, {
     required this.selectTab,

@@ -12,16 +12,28 @@ class CatechismDetailsScreen extends StatefulWidget {
   /// The CatechismDetailsScreen class is used to create a screen that displays
   /// a QuestionDetailsItem for a given question as well as the catechism
   /// app bar.
+
+  /// The routeName property is used to create the route name for the
+  /// CatechismDetailsScreen class.
   static const routeName = '/catechism-details';
 
+  /// The titles property is used to create the list of titles for the
+  /// CatechismDetailsScreen class.
   final List<String> titles;
+
+  /// The configuration property is used to create the configuration for the
+  /// CatechismDetailsScreen class.
   final CatechismConfiguration configuration;
 
+  /// The CatechismDetailsScreen constructor is used to create a catechism
+  /// details screen.
   CatechismDetailsScreen({
     required this.titles,
     required this.configuration,
   });
 
+  /// The createState method is used to create the state for the
+  /// CatechismDetailsScreen class.
   @override
   State<CatechismDetailsScreen> createState() => _CatechismDetailsScreenState();
 }

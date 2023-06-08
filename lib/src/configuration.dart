@@ -4,13 +4,26 @@ import 'package:catechism/src/models/tab.dart';
 class CatechismConfiguration {
   /// The CatechismConfiguration class is used to configure the catechism app,
   /// enabling or disabling certain features.
+
+  /// The displayQuestionNumberInDetails property is used to display the
+  /// question number in the details.
   final bool displayQuestionNumberInDetails;
+
+  /// The displayQuestionTitleInDetails property is used to display the
+  /// question title in the details.
   final bool displayQuestionTitleInDetails;
 
+  /// The tabs property is used to create the tabs.
   final List<CatechismTabData> tabs;
+
+  /// The defaultTabType property is used to create the default tab type.
   final CatechismTabType defaultTabType;
+
+  /// The showTabBar property is used to show the tab bar.
   final bool showTabBar;
 
+  /// The CatechismConfiguration constructor is used to create a new instance of
+  /// the CatechismConfiguration class.
   CatechismConfiguration({
     required this.displayQuestionNumberInDetails,
     required this.displayQuestionTitleInDetails,

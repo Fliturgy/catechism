@@ -8,11 +8,10 @@ import '../models/questions.dart';
 import '../widgets/app_bar.dart';
 import '../widgets/question_details_item.dart';
 
+/// The CatechismDetailsScreen class is used to create a screen that displays
+/// a QuestionDetailsItem for a given question as well as the catechism
+/// app bar.
 class CatechismDetailsScreen extends StatefulWidget {
-  /// The CatechismDetailsScreen class is used to create a screen that displays
-  /// a QuestionDetailsItem for a given question as well as the catechism
-  /// app bar.
-
   /// The routeName property is used to create the route name for the
   /// CatechismDetailsScreen class.
   static const routeName = '/catechism-details';
@@ -38,9 +37,9 @@ class CatechismDetailsScreen extends StatefulWidget {
   State<CatechismDetailsScreen> createState() => _CatechismDetailsScreenState();
 }
 
+/// The _CatechismDetailsScreenState class is used to create the state for the
+/// CatechismDetailsScreen class.
 class _CatechismDetailsScreenState extends State<CatechismDetailsScreen> {
-  /// The _CatechismDetailsScreenState class is used to create the state for
-  /// the CatechismDetailsScreen class.
   late CatechismTabData _selectedTab;
 
   @override
@@ -56,10 +55,10 @@ class _CatechismDetailsScreenState extends State<CatechismDetailsScreen> {
     });
   }
 
+  /// The build method is used to build the widget tree for the
+  /// CatechismDetailsScreen class.
   @override
   Widget build(BuildContext context) {
-    /// The build method is used to build the widget tree for the
-    /// CatechismDetailsScreen class.
     final questions = Provider.of<Questions>(context).questions;
     final questionId = ModalRoute.of(context)?.settings.arguments as int;
 

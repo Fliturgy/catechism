@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
+/// The Question class contains all of the information about a single
+/// catechism question.
 class Question with ChangeNotifier {
-  /// The Question class contains all of the information about a single
-  /// catechism question.
+  /// The id property is used to create the id for the question.
   final int id;
 
   /// The title property is used to create the title for the question.

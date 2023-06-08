@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 
+/// The CatechismAppBar class is used to create a catechism app bar,
+/// containing the title of the catechism app as well as either the back
+/// button or the menu button depending on the context.
 class CatechismAppBar extends StatelessWidget implements PreferredSizeWidget {
-  /// The CatechismAppBar class is used to create a catechism app bar,
-  /// containing the title of the catechism app as well as either the back
-  /// button or the menu button depending on the context.
-
   /// The titles property is used to create the titles for the app bar.
   final List<String> titles;
 
@@ -26,9 +25,9 @@ class CatechismAppBar extends StatelessWidget implements PreferredSizeWidget {
   })  : preferredSize = Size.fromHeight(titles.length * 60.0 + 20.0),
         super(key: key);
 
+  /// The build method is used to create the widget.
   @override
   Widget build(BuildContext context) {
-    /// The build method is used to create the widget.
     return AppBar(
       centerTitle: true,
       leading: hasBackButton

@@ -4,11 +4,10 @@ import '../configuration.dart';
 import '../models/info_screen_data.dart';
 import '../widgets/app_bar.dart';
 
+/// The InfoScreen class is used to create a screen that displays an optional
+/// additional information screen (e.g. about, help) as well as the catechism
+/// app bar.
 class InfoScreen extends StatelessWidget {
-  /// The InfoScreen class is used to create a screen that displays an optional
-  /// additional information screen (e.g. about, help) as well as the catechism
-  /// app bar.
-
   /// The titles property is used to create the titles for the app bar.
   final List<String> titles;
 
@@ -28,9 +27,9 @@ class InfoScreen extends StatelessWidget {
     required this.infoScreenData,
   });
 
+  /// The build method is used to create the widget.
   @override
   Widget build(BuildContext context) {
-    /// The build method is used to create the widget.
     return Scaffold(
       appBar: CatechismAppBar(
         titles,

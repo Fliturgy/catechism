@@ -8,10 +8,9 @@ import '../widgets/app_bar.dart';
 import '../widgets/drawer.dart';
 import '../widgets/question_list_item.dart';
 
+/// The CatechismListScreen class is used to create a screen that displays the
+/// list of questions as well as the catechism app bar.
 class CatechismListScreen extends StatelessWidget {
-  /// The CatechismListScreen class is used to create a screen that displays
-  /// the list of questions as well as the catechism app bar.
-
   /// The routeName property is used to create the route name for the
   /// CatechismListScreen class.
   static const routeName = '/';
@@ -36,9 +35,9 @@ class CatechismListScreen extends StatelessWidget {
     required this.infoScreens,
   });
 
+  /// The build method is used to create the widget.
   @override
   Widget build(BuildContext context) {
-    /// The build method is used to create the widget.
     final questions = Provider.of<Questions>(context).questions;
 
     return Scaffold(

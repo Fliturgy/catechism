@@ -3,10 +3,9 @@ import 'package:flutter/material.dart';
 import '../configuration.dart';
 import '../models/question.dart';
 
+/// The QuestionTab class is used to display the question and answer of a
+/// catechism question.
 class QuestionTab extends StatelessWidget {
-  /// The QuestionTab class is used to display the question and answer of a
-  /// catechism question.
-
   /// The question property is used to create the question.
   final Question question;
 
@@ -20,9 +19,9 @@ class QuestionTab extends StatelessWidget {
     required this.configuration,
   });
 
+  /// The build method is used to build the widget.
   @override
   Widget build(BuildContext context) {
-    /// The build method is used to build the widget.
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [

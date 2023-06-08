@@ -4,10 +4,9 @@ import '../configuration.dart';
 import '../models/question.dart';
 import '../models/tab.dart';
 
+/// The CatechismTabBar class is used to display the tabs at the bottom of the
+/// catechism app.
 class CatechismTabBar extends StatelessWidget {
-  /// The CatechismTabBar class is used to display the tabs at the bottom of the
-  /// catechism app.
-
   /// The question property is used to create the question.
   final Question question;
 
@@ -29,9 +28,9 @@ class CatechismTabBar extends StatelessWidget {
     required this.configuration,
   });
 
+  /// The build method is used to build the widget.
   @override
   Widget build(BuildContext context) {
-    /// The build method is used to build the widget.
     return BottomNavigationBar(
       onTap: selectTab,
       elevation: 0,

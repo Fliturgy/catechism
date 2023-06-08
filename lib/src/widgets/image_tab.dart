@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../models/question.dart';
 
+/// The ImageTab class is used to display the image for a catechism question.
 class ImageTab extends StatelessWidget {
-  /// The ImageTab class is used to display the image for a catechism question.
-
   /// The question property is used to create the question.
   final Question question;
 
@@ -12,10 +11,10 @@ class ImageTab extends StatelessWidget {
   /// ImageTab class.
   ImageTab(this.question);
 
+  /// If the question has an image, display it. Otherwise, return an empty
+  /// container.
   @override
   Widget build(BuildContext context) {
-    /// If the question has an image, display it. Otherwise, return an empty
-    /// container.
     return question.image != null
         ? Center(
             child: Column(

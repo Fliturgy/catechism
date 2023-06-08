@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 
 import './question.dart';
 
+/// The Questions class contains all of the catechism questions.
 class Questions with ChangeNotifier {
-  /// The Questions class contains all of the catechism questions.
-
   /// The questions property is used to create the list of questions.
   final List<Question> _questions;
 

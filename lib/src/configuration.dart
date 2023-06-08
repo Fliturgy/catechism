@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:catechism/src/models/tab.dart';
 
+/// The CatechismConfiguration class is used to configure the catechism app,
+/// enabling or disabling certain features.
 class CatechismConfiguration {
-  /// The CatechismConfiguration class is used to configure the catechism app,
-  /// enabling or disabling certain features.
-
   /// The displayQuestionNumberInDetails property is used to display the
   /// question number in the details.
   final bool displayQuestionNumberInDetails;

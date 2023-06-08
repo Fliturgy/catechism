@@ -4,10 +4,9 @@ import '../configuration.dart';
 import '../models/question.dart';
 import '../screens/catechism_details_screen.dart';
 
+/// The QuestionListItem class is used to create a single list item for a
+/// given question for the catechism list screen.
 class QuestionListItem extends StatelessWidget {
-  /// The QuestionListItem class is used to create a single list item for a
-  /// given question for the catechism list screen.
-
   /// The question property is used to create the question for the list item.
   final Question question;
 
@@ -22,9 +21,9 @@ class QuestionListItem extends StatelessWidget {
     required this.configuration,
   });
 
+  /// The build method is used to create the widget.
   @override
   Widget build(BuildContext context) {
-    /// The build method is used to create the widget.
     return ListTile(
       // leading: Text(
       //   question.id.toString(),

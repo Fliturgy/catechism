@@ -9,9 +9,8 @@ import './screens/catechism_details_screen.dart';
 import './screens/catechism_list_screen.dart';
 import './screens/info_screen.dart';
 
+/// The CatechismApp class is used to create a catechism app.
 class CatechismApp extends StatelessWidget {
-  /// The CatechismApp class is used to create a catechism app.
-
   /// The questions property is used to create the list of questions.
   final List<Question> questions;
 
@@ -41,9 +40,9 @@ class CatechismApp extends StatelessWidget {
     required this.infoScreens,
   });
 
+  /// The build method is used to create the widget.
   @override
   Widget build(BuildContext context) {
-    /// The build method is used to create the widget.
     Map<String, WidgetBuilder> routes = {
       CatechismListScreen.routeName: (context) => CatechismListScreen(
             titles: titles,

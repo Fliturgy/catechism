@@ -7,10 +7,9 @@ import '../widgets/image_tab.dart';
 import '../widgets/question_tab.dart';
 import '../widgets/scripture_tab.dart';
 
+/// The QuestionDetailsItem class is used to display the details of a
+/// question: the title, the number, the question, and the answer.
 class QuestionDetailsItem extends StatelessWidget {
-  /// The QuestionDetailsItem class is used to display the details of a
-  /// question: the title, the number, the question, and the answer.
-
   /// The question property is used to create the question.
   final Question question;
 
@@ -28,9 +27,9 @@ class QuestionDetailsItem extends StatelessWidget {
     required this.selectedTab,
   });
 
+  /// The buildTabContent method is used to build the content of the tab
+  /// based on the selected tab.
   Widget buildTabContent(context) {
-    /// The buildTabContent method is used to build the content of the tab
-    /// based on the selected tab.
     switch (selectedTab.type) {
       case CatechismTabType.image:
         return ImageTab(question);
@@ -49,9 +48,9 @@ class QuestionDetailsItem extends StatelessWidget {
     }
   }
 
+  /// The build method is used to build the widget.
   @override
   Widget build(BuildContext context) {
-    /// The build method is used to build the widget.
     return SingleChildScrollView(
       child: Padding(
         padding: const EdgeInsets.symmetric(

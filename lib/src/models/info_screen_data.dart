@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
+/// The InfoScreenData class contains all of the information needed to create
+/// and optional additional information screen (e.g. about, help).
 class InfoScreenData {
-  /// The InfoScreenData class contains all of the information needed to create
-  /// and optional additional information screen (e.g. about, help).
-
   /// The routeName property is used to create the route name for the screen.
   final String routeName;
 

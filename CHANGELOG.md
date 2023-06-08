@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - improved dart docs
+- make question title truly optional (i.e. nullable)
 
 ## [0.0.5]
 

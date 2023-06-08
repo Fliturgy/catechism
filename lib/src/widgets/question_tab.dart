@@ -25,12 +25,14 @@ class QuestionTab extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        if (configuration.displayQuestionTitleInDetails && question.title != "")
+        if (configuration.displayQuestionTitleInDetails &&
+            question.title != null)
           Text(
-            question.title,
+            question.title ?? "",
             style: Theme.of(context).textTheme.displaySmall,
           ),
-        if (configuration.displayQuestionTitleInDetails && question.title != "")
+        if (configuration.displayQuestionTitleInDetails &&
+            question.title != null)
           SizedBox(
             height: 5.0,
           ),

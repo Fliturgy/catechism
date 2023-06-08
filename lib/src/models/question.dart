@@ -7,7 +7,8 @@ class Question with ChangeNotifier {
   final int id;
 
   /// The title property is used to create the title for the question.
-  final String title;
+  /// This is an optional property.
+  final String? title;
 
   /// The question property is used to create the question.
   final String question;
@@ -27,7 +28,7 @@ class Question with ChangeNotifier {
   /// Question class.
   Question({
     required this.id,
-    required this.title,
+    this.title,
     required this.question,
     required this.answer,
     this.references = const [],

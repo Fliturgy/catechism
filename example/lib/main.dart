@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 final List<Question> questions = [
   Question(
     id: 1,
-    title: '',
     question: 'What is this?',
     answer: 'This is an example of a catechism app.',
     references: [

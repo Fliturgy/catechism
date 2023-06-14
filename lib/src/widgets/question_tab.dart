@@ -25,8 +25,7 @@ class QuestionTab extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        if (configuration.displayQuestionTitleInDetails &&
-            question.title != null)
+        if (configuration.displayQuestionTitleInDetails)
           Text(
             question.title ?? "",
             style: Theme.of(context).textTheme.displaySmall,
@@ -37,8 +36,10 @@ class QuestionTab extends StatelessWidget {
             height: 5.0,
           ),
         Text(
-          configuration.displayQuestionNumberInDetails
-              ? '${question.id}. ${question.question}'
+          configuration.displayQuestionTitleShortInDetails &&
+                  question.titleShort != null &&
+                  question.titleShort != ""
+              ? '${question.titleShort} ${question.question}'
               : question.question,
           style: Theme.of(context).textTheme.headlineMedium,
         ),
@@ -54,7 +55,6 @@ class QuestionTab extends StatelessWidget {
         Text(
           question.answer,
           softWrap: true,
-          // textAlign: TextAlign.justify,
           style: Theme.of(context).textTheme.bodyLarge,
         ),
         SizedBox(

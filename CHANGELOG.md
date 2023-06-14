@@ -7,10 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.6]
+
 ### Changed
 
 - improved dart docs
 - make question title truly optional (i.e. nullable)
+- add question short title (titleShort) optional field and use it instead of displaying question id to better support languages/locales other than English
 
 ## [0.0.5]
 
@@ -61,7 +64,8 @@ Initial Version
     - displaying the question number in the details screen
     - displaying the question title in the details screen
 
-[unreleased]: https://github.com/fliturgy/catechism/compare/v0.0.5...HEAD
+[unreleased]: https://github.com/fliturgy/catechism/compare/v0.0.6...HEAD
+[0.0.6]: https://github.com/fliturgy/catechism/compare/v0.0.5...v0.0.6
 [0.0.5]: https://github.com/fliturgy/catechism/compare/v0.0.4...v0.0.5
 [0.0.4]: https://github.com/fliturgy/catechism/compare/v0.0.3...v0.0.4
 [0.0.3]: https://github.com/fliturgy/catechism/compare/v0.0.2...v0.0.3

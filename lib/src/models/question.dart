@@ -6,9 +6,14 @@ class Question with ChangeNotifier {
   /// The id property is used to create the id for the question.
   final int id;
 
-  /// The title property is used to create the title for the question.
-  /// This is an optional property.
+  /// The title property is used to create the details page title for the
+  /// question. This is an optional property.
   final String? title;
+
+  /// The titleShort property is used to create the list page title for the
+  /// question and is optionally used on the details page. This is an optional
+  /// property.
+  final String? titleShort;
 
   /// The question property is used to create the question.
   final String question;
@@ -20,8 +25,8 @@ class Question with ChangeNotifier {
   /// This is an optional property.
   final List<String> references;
 
-  /// The image property is used to create the image for the question.
-  /// This is an optional property.
+  /// The image property is used to create the image for the question. This is
+  /// an optional property.
   final String? image;
 
   /// The Question constructor is used to create a new instance of the
@@ -29,6 +34,7 @@ class Question with ChangeNotifier {
   Question({
     required this.id,
     this.title,
+    this.titleShort,
     required this.question,
     required this.answer,
     this.references = const [],

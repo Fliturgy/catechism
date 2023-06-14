@@ -25,17 +25,15 @@ class QuestionListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      // leading: Text(
-      //   question.id.toString(),
-      //   style: Theme.of(context).textTheme.headline5,
-      // ),
+      leading: configuration.displayQuestionTitleShortInList
+          ? Text(
+              question.titleShort ?? "",
+              style: Theme.of(context).textTheme.headlineSmall,
+            )
+          : null,
       title: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            '${question.id.toString()}. ',
-            style: Theme.of(context).textTheme.headlineSmall,
-          ),
           Flexible(
             child: Text(
               question.question,

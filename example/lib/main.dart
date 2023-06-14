@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 final List<Question> questions = [
   Question(
     id: 1,
+    title: 'Question 1',
+    titleShort: '1.',
     question: 'What is this?',
     answer: 'This is an example of a catechism app.',
     references: [
@@ -14,7 +16,6 @@ final List<Question> questions = [
   ),
   Question(
     id: 2,
-    title: '',
     question: 'Why a catechism?',
     answer: 'It\'s an effective learning tool.',
   ),
@@ -28,11 +29,23 @@ final ThemeData themeData = ThemeData(
   bottomNavigationBarTheme: const BottomNavigationBarThemeData(
     backgroundColor: Colors.white,
   ),
+  textTheme: const TextTheme(
+    headlineSmall: TextStyle(
+      fontSize: 16.0,
+    ),
+    headlineMedium: TextStyle(
+      fontSize: 20.0,
+    ),
+    displaySmall: TextStyle(
+      fontSize: 16.0,
+    ),
+    bodyLarge: TextStyle(
+      fontSize: 18.0,
+    ),
+  ),
 );
 
 final configuration = CatechismConfiguration(
-  displayQuestionNumberInDetails: true,
-  displayQuestionTitleInDetails: false,
   tabs: const [
     CatechismTabData(
       type: CatechismTabType.question,

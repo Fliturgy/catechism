@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.7]
+
 ### Added
 
 - Question details page is now optional. Either the details page will be used, or the list will contain the answers in-line. This is controlled through the "displayQuestionDetailsAsSeparatePage" configuration flag, which defaults to true (so, previous behavior is the default).
@@ -74,7 +76,8 @@ Initial Version
     - displaying the question number in the details screen
     - displaying the question title in the details screen
 
-[unreleased]: https://github.com/fliturgy/catechism/compare/v0.0.6...HEAD
+[unreleased]: https://github.com/fliturgy/catechism/compare/v0.0.7...HEAD
+[0.0.7]: https://github.com/fliturgy/catechism/compare/v0.0.6...v0.0.7
 [0.0.6]: https://github.com/fliturgy/catechism/compare/v0.0.5...v0.0.6
 [0.0.5]: https://github.com/fliturgy/catechism/compare/v0.0.4...v0.0.5
 [0.0.4]: https://github.com/fliturgy/catechism/compare/v0.0.3...v0.0.4

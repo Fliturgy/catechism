@@ -19,6 +19,11 @@ class CatechismConfiguration {
   /// true.
   final bool displayQuestionTitleShortInList;
 
+  /// The displayQuestionDetailsInList property is used to determine whether
+  /// the question details are displayed in a separate details page or in the
+  /// list page. This defaults to true.
+  final bool displayQuestionDetailsAsSeparatePage;
+
   /// The tabs property is used to create the tabs.
   final List<CatechismTabData> tabs;
 
@@ -34,6 +39,7 @@ class CatechismConfiguration {
     this.displayQuestionTitleShortInDetails = true,
     this.displayQuestionTitleInDetails = true,
     this.displayQuestionTitleShortInList = true,
+    this.displayQuestionDetailsAsSeparatePage = true,
     this.tabs = const [
       CatechismTabData(
         type: CatechismTabType.question,

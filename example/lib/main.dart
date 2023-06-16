@@ -5,7 +5,7 @@ final List<Question> questions = [
   Question(
     id: 1,
     title: 'Question 1',
-    titleShort: '1.',
+    titleShort: '1',
     question: 'What is this?',
     answer: 'This is an example of a catechism app.',
     references: [
@@ -16,8 +16,19 @@ final List<Question> questions = [
   ),
   Question(
     id: 2,
+    title: 'Question 2',
+    titleShort: '2',
     question: 'Why a catechism?',
     answer: 'It\'s an effective learning tool.',
+  ),
+  Question(
+    id: 3,
+    title: 'Question 3',
+    titleShort: '3',
+    question:
+        'What do really long questions look like? Do they wrap properly? Do they align properly?',
+    answer:
+        'Yes, we have tested really long questions (and answers) to make sure that they look good and wrap and align properly.',
   ),
 ];
 
@@ -42,10 +53,14 @@ final ThemeData themeData = ThemeData(
     bodyLarge: TextStyle(
       fontSize: 18.0,
     ),
+    headlineLarge: TextStyle(
+      fontSize: 24.0,
+    ),
   ),
 );
 
 final configuration = CatechismConfiguration(
+  displayQuestionTitleShortInDetails: false,
   tabs: const [
     CatechismTabData(
       type: CatechismTabType.question,

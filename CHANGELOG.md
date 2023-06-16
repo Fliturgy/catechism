@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Question details page is now optional. Either the details page will be used, or the list will contain the answers in-line. This is controlled through the "displayQuestionDetailsAsSeparatePage" configuration flag, which defaults to true (so, previous behavior is the default).
+- The leading (question short title) in the question list item is now wrapped in a CircleAvatar. The background color can be set using the "primaryColorLight" property of the theme, and the text color can be set using the "color" property of the "headlineMedium" property of the theme. By setting the background color to the same color as the "scaffoldBackgroundColor" property, the CircleAvatar will effectively disappear.
+
+### Changed
+
+- Text widgets that used the "headlineMedium" style (info screen titles and question details titles) now use "headlineLarge" instead.
+- Leading (question short title) now uses the "headlineMedium" style
+
 ## [0.0.6]
 
 ### Changed

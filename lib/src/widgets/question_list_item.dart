@@ -26,28 +26,32 @@ class QuestionListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       leading: configuration.displayQuestionTitleShortInList
-          ? Text(
-              question.titleShort ?? "",
-              style: Theme.of(context).textTheme.headlineSmall,
+          ? CircleAvatar(
+              child: Text(
+                question.titleShort ?? "",
+                style: Theme.of(context).textTheme.headlineMedium,
+              ),
+              backgroundColor: Theme.of(context).primaryColorLight,
             )
           : null,
-      title: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Flexible(
-            child: Text(
-              question.question,
-              style: Theme.of(context).textTheme.headlineSmall,
-            ),
-          ),
-        ],
+      title: Text(
+        question.question,
+        style: Theme.of(context).textTheme.headlineSmall,
       ),
-      onTap: () {
-        Navigator.of(context).pushNamed(
-          CatechismDetailsScreen.routeName,
-          arguments: question.id,
-        );
-      },
+      subtitle: configuration.displayQuestionDetailsAsSeparatePage
+          ? null
+          : Text(
+              question.answer,
+              style: Theme.of(context).textTheme.bodySmall,
+            ),
+      onTap: configuration.displayQuestionDetailsAsSeparatePage
+          ? () {
+              Navigator.of(context).pushNamed(
+                CatechismDetailsScreen.routeName,
+                arguments: question.id,
+              );
+            }
+          : null,
     );
   }
 }

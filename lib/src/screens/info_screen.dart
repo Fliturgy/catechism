@@ -46,7 +46,7 @@ class InfoScreen extends StatelessWidget {
             children: [
               Text(
                 infoScreenData.title,
-                style: Theme.of(context).textTheme.headlineMedium,
+                style: Theme.of(context).textTheme.headlineLarge,
               ),
               SizedBox(
                 height: 10.0,

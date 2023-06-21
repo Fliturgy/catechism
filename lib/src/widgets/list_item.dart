@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 import '../configuration.dart';
 import '../models/question.dart';
-import '../screens/catechism_details_screen.dart';
+import '../screens/details_screen.dart';
 
 /// The QuestionListItem class is used to create a single list item for a
 /// given question for the catechism list screen.
-class QuestionListItem extends StatelessWidget {
+class ListItem extends StatelessWidget {
   /// The question property is used to create the question for the list item.
   final Question question;
 
@@ -16,7 +16,7 @@ class QuestionListItem extends StatelessWidget {
 
   /// The QuestionListItem constructor is used to create a new instance of the
   /// QuestionListItem class.
-  QuestionListItem(
+  ListItem(
     this.question, {
     required this.configuration,
   });
@@ -47,7 +47,7 @@ class QuestionListItem extends StatelessWidget {
       onTap: configuration.displayQuestionDetailsAsSeparatePage
           ? () {
               Navigator.of(context).pushNamed(
-                CatechismDetailsScreen.routeName,
+                DetailsScreen.routeName,
                 arguments: question.id,
               );
             }

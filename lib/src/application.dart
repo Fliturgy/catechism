@@ -5,9 +5,8 @@ import './configuration.dart';
 import './models/info_screen_data.dart';
 import './models/question.dart';
 import './models/questions.dart';
-import './screens/catechism_details_screen.dart';
-import './screens/catechism_list_screen.dart';
-import './screens/info_screen.dart';
+import 'screens/details_screen.dart';
+import 'screens/list_screen.dart';
 
 /// The CatechismApp class is used to create a catechism app.
 class CatechismApp extends StatelessWidget {
@@ -44,23 +43,16 @@ class CatechismApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Map<String, WidgetBuilder> routes = {
-      CatechismListScreen.routeName: (context) => CatechismListScreen(
+      ListScreen.routeName: (context) => ListScreen(
             titles: titles,
             configuration: configuration,
             infoScreens: infoScreens,
           ),
-      CatechismDetailsScreen.routeName: (context) => CatechismDetailsScreen(
+      DetailsScreen.routeName: (context) => DetailsScreen(
             titles: titles,
             configuration: configuration,
           )
     };
-
-    for (var infoScreen in infoScreens) {
-      routes[infoScreen.routeName] = (BuildContext context) => InfoScreen(
-          titles: titles,
-          configuration: configuration,
-          infoScreenData: infoScreen);
-    }
 
     return MultiProvider(
       providers: [

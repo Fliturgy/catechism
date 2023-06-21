@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
 
+import '../configuration.dart';
 import '../models/info_screen_data.dart';
+import '../screens/info_screen.dart';
 
 /// The CatechismDrawer class is used to create a catechism drawer, which
 /// contains any optional additional information screens (e.g. about, help).
 class CatechismDrawer extends StatelessWidget {
+  /// The titles property is used to create the list of titles.
+  final List<String> titles;
+
+  /// The configuration property is used to create the configuration.
+  final CatechismConfiguration configuration;
+
   /// The infoScreens property is used to create the info screens for the
   /// drawer.
   final List<InfoScreenData> infoScreens;
@@ -12,6 +20,8 @@ class CatechismDrawer extends StatelessWidget {
   /// The CatechismDrawer constructor is used to create a new instance of the
   /// CatechismDrawer class.
   CatechismDrawer({
+    required this.titles,
+    required this.configuration,
     required this.infoScreens,
   });
 
@@ -35,7 +45,15 @@ class CatechismDrawer extends StatelessWidget {
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
               onTap: () {
-                Navigator.of(context).pushNamed(infoScreenData.routeName);
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) => InfoScreen(
+                      titles: titles,
+                      configuration: configuration,
+                      infoScreenData: infoScreenData,
+                    ),
+                  ),
+                );
               },
             );
           }).toList(),

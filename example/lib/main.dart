@@ -9,8 +9,18 @@ final List<Question> questions = [
     question: 'What is this?',
     answer: 'This is an example of a catechism app.',
     references: [
-      'Source 1',
-      'Source XYZ',
+      QuestionReference(
+        title: 'Source 1',
+        content: ['blah blah blah'],
+      ),
+      QuestionReference(
+        title: 'Source XYZ',
+        content: [
+          'yadda',
+          'yadda',
+          'yadda',
+        ],
+      ),
     ],
     image: 'assets/graphics/question-mark.png',
   ),
@@ -61,29 +71,22 @@ final ThemeData themeData = ThemeData(
 
 final configuration = CatechismConfiguration(
   displayQuestionTitleShortInDetails: false,
-  tabs: const [
-    CatechismTabData(
-      type: CatechismTabType.question,
-      label: 'Question',
-      icon: Icons.question_answer_outlined,
-    ),
-    CatechismTabData(
-      type: CatechismTabType.scripture,
-      label: 'References',
-      icon: Icons.menu_book,
-    ),
-    CatechismTabData(
-      type: CatechismTabType.image,
-      label: 'Image',
-      icon: Icons.image,
-    ),
-  ],
-  showTabBar: true,
 );
 
 final List<Locale> locales = [
   const Locale('en'),
   const Locale('es'),
+];
+
+final List<InfoScreenData> infoScreens = [
+  InfoScreenData(
+    title: 'About',
+    content: ['This is an example of a catechism app.'],
+  ),
+  InfoScreenData(
+    title: 'Privacy Policy',
+    content: ['We don\'t collect any data.'],
+  ),
 ];
 
 void main() {
@@ -101,7 +104,7 @@ class ExampleCatechismApp extends StatelessWidget {
       themeData: themeData,
       configuration: configuration,
       supportedLocales: locales,
-      infoScreens: const [],
+      infoScreens: infoScreens,
     );
   }
 }

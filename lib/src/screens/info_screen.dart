@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../configuration.dart';
 import '../models/info_screen_data.dart';
-import '../widgets/app_bar.dart';
+import '../widgets/top_bar.dart';
 
 /// The InfoScreen class is used to create a screen that displays an optional
 /// additional information screen (e.g. about, help) as well as the catechism
@@ -31,7 +31,7 @@ class InfoScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CatechismAppBar(
+      appBar: TopBar(
         titles,
         hasBackButton: true,
       ),

@@ -7,6 +7,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.8]
+
+### Added
+
+- An optional show/hide answer button on the question details page.
+- A new references "pop up" page to show referenced source material.
+
+### Changed
+
+- The references tab is now a pop up page and has configuration settings (replacing some of the removed tab configuration setting) for the following:
+  - displayQuestionReferences - if "false" the icon in the bottom bar for references will not appear
+  - questionReferencesIcon - allows the icon displayed in the bottom bar for references to be customized
+
+### Removed
+
+- The image tab (the questions can still have images, they just aren't shown anywhere currently).
+- The tab bar related configuration settings.
+
 ## [0.0.7]
 
 ### Added
@@ -76,7 +94,8 @@ Initial Version
     - displaying the question number in the details screen
     - displaying the question title in the details screen
 
-[unreleased]: https://github.com/fliturgy/catechism/compare/v0.0.7...HEAD
+[unreleased]: https://github.com/fliturgy/catechism/compare/v0.0.8...HEAD
+[0.0.8]: https://github.com/fliturgy/catechism/compare/v0.0.7...v0.0.8
 [0.0.7]: https://github.com/fliturgy/catechism/compare/v0.0.6...v0.0.7
 [0.0.6]: https://github.com/fliturgy/catechism/compare/v0.0.5...v0.0.6
 [0.0.5]: https://github.com/fliturgy/catechism/compare/v0.0.4...v0.0.5

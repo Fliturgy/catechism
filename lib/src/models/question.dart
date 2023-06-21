@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'question_reference.dart';
+
 /// The Question class contains all of the information about a single
 /// catechism question.
 class Question with ChangeNotifier {
@@ -23,7 +25,7 @@ class Question with ChangeNotifier {
 
   /// The references property is used to create the references for the question.
   /// This is an optional property.
-  final List<String> references;
+  final List<QuestionReference> references;
 
   /// The image property is used to create the image for the question. This is
   /// an optional property.

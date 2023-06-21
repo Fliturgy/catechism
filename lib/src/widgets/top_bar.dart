@@ -36,7 +36,12 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       centerTitle: true,
-      automaticallyImplyLeading: hasBackButton,
+      automaticallyImplyLeading: hasBackButton || !hasCloseButton,
+      leading: hasBackButton
+          ? BackButton(
+              color: Theme.of(context).primaryColor,
+            )
+          : null,
       elevation: 0,
       iconTheme: IconThemeData(color: Theme.of(context).primaryColor),
       toolbarHeight: (titles.isNotEmpty ? titles.length : 1) * 60.0 + 20.0,

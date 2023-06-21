@@ -28,7 +28,7 @@ class ReferenceItem extends StatelessWidget {
           height: 10.0,
         ),
         Text(
-          reference.content.join('\n\n'),
+          reference.content.join('\n'),
           softWrap: true,
           style: Theme.of(context).textTheme.bodyLarge,
         ),

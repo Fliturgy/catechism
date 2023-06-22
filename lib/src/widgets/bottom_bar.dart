@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 import '../configuration.dart';
 import '../models/question.dart';
-import '../screens/scripture_screen.dart';
+import '../screens/notes_screen.dart';
+import '../screens/prayer_screen.dart';
+import '../screens/references_screen.dart';
 
 /// The CatechismTabBar class is used to display the tabs at the bottom of the
 /// catechism app.
@@ -27,44 +29,72 @@ class BottomBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          // TODO: Commentary
-          // IconButton(
-          //   onPressed: () => {},
-          //   icon: Icon(Icons.question_answer_outlined),
-          // ),
-          // TODO: Prayer
-          // IconButton(
-          //   onPressed: () => {},
-          //   icon: Icon(Icons.self_improvement_outlined),
-          // ),
-          // Scripture References
-          configuration.displayQuestionReferences &&
-                  question.references.isNotEmpty
-              ? IconButton(
-                  onPressed: () => Navigator.of(context).push(
-                    PageRouteBuilder(
-                      pageBuilder: (context, animation, secondaryAnimation) =>
-                          ScriptureScreen(question),
-                      transitionsBuilder:
-                          (context, animation, secondaryAnimation, child) =>
-                              _transitionBuilder(
-                        context,
-                        animation,
-                        secondaryAnimation,
-                        child,
+          // Commentary
+          if (configuration.displayQuestionNotes)
+            IconButton(
+              onPressed: question.notes.isEmpty
+                  ? null
+                  : () => Navigator.of(context).push(
+                        PageRouteBuilder(
+                          pageBuilder:
+                              (context, animation, secondaryAnimation) =>
+                                  NotesScreen(question),
+                          transitionsBuilder:
+                              (context, animation, secondaryAnimation, child) =>
+                                  _transitionBuilder(
+                            context,
+                            animation,
+                            secondaryAnimation,
+                            child,
+                          ),
+                        ),
                       ),
-                    ),
-                  ),
-                  icon: Icon(configuration.questionReferencesIcon),
-                )
-              : SizedBox(
-                  width: 1,
-                ),
-          // TODO: Play Audio/Video
-          // IconButton(
-          //   onPressed: () => {},
-          //   icon: Icon(Icons.play_arrow_outlined),
-          // ),
+              icon: configuration.questionNotesIcon,
+            ),
+          // Prayer
+          if (configuration.displayQuestionPrayer)
+            IconButton(
+              onPressed: question.prayer.isEmpty
+                  ? null
+                  : () => Navigator.of(context).push(
+                        PageRouteBuilder(
+                          pageBuilder:
+                              (context, animation, secondaryAnimation) =>
+                                  PrayerScreen(question),
+                          transitionsBuilder:
+                              (context, animation, secondaryAnimation, child) =>
+                                  _transitionBuilder(
+                            context,
+                            animation,
+                            secondaryAnimation,
+                            child,
+                          ),
+                        ),
+                      ),
+              icon: configuration.questionPrayerIcon,
+            ),
+          // Scripture References
+          if (configuration.displayQuestionReferences)
+            IconButton(
+              onPressed: question.references.isEmpty
+                  ? null
+                  : () => Navigator.of(context).push(
+                        PageRouteBuilder(
+                          pageBuilder:
+                              (context, animation, secondaryAnimation) =>
+                                  ReferencesScreen(question),
+                          transitionsBuilder:
+                              (context, animation, secondaryAnimation, child) =>
+                                  _transitionBuilder(
+                            context,
+                            animation,
+                            secondaryAnimation,
+                            child,
+                          ),
+                        ),
+                      ),
+              icon: configuration.questionReferencesIcon,
+            ),
         ],
       ),
     );

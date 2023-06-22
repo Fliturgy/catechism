@@ -1,5 +1,5 @@
 name: catechism
-version: 0.0.9
+version: 0.0.10
 
 description: The catechism library is a framework for creating a catechism (question and answer learning tool) application.
 homepage: https://github.com/fliturgy/catechism
@@ -11,6 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   provider: ^6.0.5
+  font_awesome_flutter: ^10.4.0
   flutter_localizations:
     sdk: flutter
 

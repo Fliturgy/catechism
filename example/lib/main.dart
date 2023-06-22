@@ -30,6 +30,16 @@ final List<Question> questions = [
     titleShort: '2',
     question: 'Why a catechism?',
     answer: 'It\'s an effective learning tool.',
+    prayer: [
+      'Our Father which art in heaven, Hallowed be thy name.',
+      'Thy kingdom come.',
+      'Thy will be done in earth, as it is in heaven.',
+      'Give us this day our daily bread.',
+      'And forgive us our debts, as we forgive our debtors.',
+      'And lead us not into temptation, but deliver us from evil:',
+      'For thine is the kingdom, and the power, and the glory, for ever.',
+      'Amen.',
+    ],
   ),
   Question(
     id: 3,
@@ -39,6 +49,10 @@ final List<Question> questions = [
         'What do really long questions look like? Do they wrap properly? Do they align properly?',
     answer:
         'Yes, we have tested really long questions (and answers) to make sure that they look good and wrap and align properly.',
+    notes: [
+      'this is a footnote',
+      'and now another one',
+    ],
   ),
 ];
 
@@ -71,6 +85,8 @@ final ThemeData themeData = ThemeData(
 
 final configuration = CatechismConfiguration(
   displayQuestionTitleShortInDetails: false,
+  displayQuestionPrayer: false,
+  displayQuestionNotes: false,
 );
 
 final List<Locale> locales = [

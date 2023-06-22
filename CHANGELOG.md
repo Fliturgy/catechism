@@ -7,6 +7,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.10]
+
+### Added
+
+- Question Notes:
+  - A new notes field on the question model.
+  - A new notes "pop up" page to show notes for a given catechism question.
+  - The displayQuestionNotes configuration setting to determine whether or not to show the icon in the bottom bar for the notes on the question details page (defaults to true).
+  - The questionNotesIcon configuration setting that allows customization for the icon displayed in the bottom bar for the notes on the question details page (defaults to question_answer_outlined).
+- Question Prayer:
+  - A new prayer field on the question model.
+  - A new prayer "pop up" page to show the prayer for a given catechism question.
+  - The displayQuestionPrayer configuration setting to determine whether or not to show the icon in the bottom bar for the prayer on the question details page (defaults to true).
+  - The questionPrayerIcon configuration setting that allows customization for the icon displayed in the bottom bar for the prayer on the question details page (defaults to hands_praying).
+
+### Changed
+
+- Renamed ScriptureScreen to ReferencesScreen to be more consistent with naming.
+
 ## [0.0.9]
 
 ### Fixed
@@ -101,7 +120,8 @@ Initial Version
     - displaying the question number in the details screen
     - displaying the question title in the details screen
 
-[unreleased]: https://github.com/fliturgy/catechism/compare/v0.0.9...HEAD
+[unreleased]: https://github.com/fliturgy/catechism/compare/v0.0.10...HEAD
+[0.0.10]: https://github.com/fliturgy/catechism/compare/v0.0.9...v0.0.10
 [0.0.9]: https://github.com/fliturgy/catechism/compare/v0.0.8...v0.0.9
 [0.0.8]: https://github.com/fliturgy/catechism/compare/v0.0.7...v0.0.8
 [0.0.7]: https://github.com/fliturgy/catechism/compare/v0.0.6...v0.0.7

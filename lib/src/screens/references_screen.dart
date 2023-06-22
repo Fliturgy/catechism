@@ -4,16 +4,16 @@ import '../models/question.dart';
 import '../widgets/reference_item.dart';
 import '../widgets/top_bar.dart';
 
-class ScriptureScreen extends StatelessWidget {
+/// The ReferencesScreen class is used to display the references for a question.
+class ReferencesScreen extends StatelessWidget {
   /// The question property is used to create the question.
   final Question question;
 
-  /// The ScriptureScreen constructor is used to create a new instance of the
-  /// ScriptureScreen class.
-  ScriptureScreen(this.question);
+  /// The ReferencesScreen constructor is used to create a new instance of the
+  /// ReferencesScreen class.
+  ReferencesScreen(this.question);
 
-  /// If the question has an image, display it. Otherwise, return an empty
-  /// container.
+  /// Display the references for the question.
   @override
   Widget build(BuildContext context) {
     return Scaffold(

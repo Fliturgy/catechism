@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 /// The CatechismConfiguration class is used to configure the catechism app,
 /// enabling or disabling certain features.
@@ -31,7 +32,25 @@ class CatechismConfiguration {
   /// The questionReferencesIcon property is used to determine the icon used to
   /// display the question references in the details page. This defaults to the
   /// menu_book_outlined icon.
-  final IconData questionReferencesIcon;
+  final Widget questionReferencesIcon;
+
+  /// The displayQuestionNotes property is used to determine whether the
+  /// question notes are displayed in the details page. This defaults to true.
+  final bool displayQuestionNotes;
+
+  /// The questionNotesIcon property is used to determine the icon used to
+  /// display the question notes in the details page. This defaults to the
+  /// notes_outlined icon.
+  final Widget questionNotesIcon;
+
+  /// The displayQuestionPrayer property is used to determine whether the
+  /// question prayer is displayed in the details page. This defaults to true.
+  final bool displayQuestionPrayer;
+
+  /// The questionPrayerIcon property is used to determine the icon used to
+  /// display the question prayer in the details page. This defaults to the
+  /// hands_praying icon.
+  final Widget questionPrayerIcon;
 
   /// The allowHideAnswer property is used to determine whether the user can
   /// hide the answer in the details page. This defaults to true.
@@ -45,7 +64,16 @@ class CatechismConfiguration {
     this.displayQuestionTitleShortInList = true,
     this.displayQuestionDetailsAsSeparatePage = true,
     this.displayQuestionReferences = true,
+    questionReferencesIcon,
+    this.displayQuestionNotes = true,
+    questionNotesIcon,
+    this.displayQuestionPrayer = true,
+    questionPrayerIcon,
     this.allowHideAnswer = true,
-    this.questionReferencesIcon = Icons.menu_book_outlined,
-  });
+  })  : questionReferencesIcon =
+            questionReferencesIcon ?? Icon(Icons.menu_book_outlined),
+        questionNotesIcon =
+            questionNotesIcon ?? Icon(Icons.question_answer_outlined),
+        questionPrayerIcon =
+            questionPrayerIcon ?? FaIcon(FontAwesomeIcons.handsPraying);
 }

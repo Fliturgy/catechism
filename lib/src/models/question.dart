@@ -27,6 +27,14 @@ class Question with ChangeNotifier {
   /// This is an optional property.
   final List<QuestionReference> references;
 
+  /// The notes property is used to create the notes for the question. This is
+  /// an optional property.
+  final List<String> notes;
+
+  /// The prayer property is used to create the prayer for the question. This is
+  /// an optional property.
+  final List<String> prayer;
+
   /// The image property is used to create the image for the question. This is
   /// an optional property.
   final String? image;
@@ -40,6 +48,8 @@ class Question with ChangeNotifier {
     required this.question,
     required this.answer,
     this.references = const [],
+    this.notes = const [],
+    this.prayer = const [],
     this.image,
   });
 }

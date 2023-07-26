@@ -1,29 +1,27 @@
+import 'package:catechism/src/features/configuration/data/configuration_provider.dart';
+import 'package:catechism/src/features/questions/domain/question.dart';
+import 'package:catechism/src/routing/app_routes.dart';
 import 'package:flutter/material.dart';
-
-import '../configuration.dart';
-import '../models/question.dart';
-import '../screens/details_screen.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 /// The QuestionListItem class is used to create a single list item for a
 /// given question for the catechism list screen.
-class ListItem extends StatelessWidget {
+class QuestionListItem extends ConsumerWidget {
   /// The question property is used to create the question for the list item.
   final Question question;
 
-  /// The configuration property is used to create the configuration for the
-  /// list item.
-  final CatechismConfiguration configuration;
-
   /// The QuestionListItem constructor is used to create a new instance of the
   /// QuestionListItem class.
-  ListItem(
-    this.question, {
-    required this.configuration,
-  });
+  QuestionListItem(
+    this.question,
+  );
 
   /// The build method is used to create the widget.
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final configuration = ref.watch(configurationProvider!);
+
     return ListTile(
       leading: configuration.displayQuestionTitleShortInList
           ? CircleAvatar(
@@ -45,12 +43,12 @@ class ListItem extends StatelessWidget {
               style: Theme.of(context).textTheme.bodySmall,
             ),
       onTap: configuration.displayQuestionDetailsAsSeparatePage
-          ? () {
-              Navigator.of(context).pushNamed(
-                DetailsScreen.routeName,
-                arguments: question.id,
-              );
-            }
+          ? () => context.goNamed(
+                AppRoute.details.name,
+                pathParameters: {
+                  'questionId': question.id.toString(),
+                },
+              )
           : null,
     );
   }

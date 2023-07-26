@@ -1,11 +1,10 @@
+import 'package:catechism/src/features/questions/domain/question_reference.dart';
 import 'package:flutter/material.dart';
 
-import '../models/question_reference.dart';
-
-class ReferenceItem extends StatelessWidget {
+class QuestionReferenceItem extends StatelessWidget {
   final QuestionReference reference;
 
-  const ReferenceItem({
+  const QuestionReferenceItem({
     required this.reference,
   });
 

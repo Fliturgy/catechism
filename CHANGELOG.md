@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Using GoRouter for routing/navigation instead of Navigator 1.0
+  - custom pages (info screens) now need to specify a routeName
+- Using Riverpod for state management instead of Provider
+- Renamed info screens to custom pages
+
+### Fixed
+
+- The drawer should close automatically when one of the items is selected.
+
 ## [0.0.10]
 
 ### Added

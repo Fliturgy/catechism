@@ -1,5 +1,28 @@
 import 'package:catechism/catechism.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_web_plugins/url_strategy.dart';
+
+void main() {
+  usePathUrlStrategy();
+  runApp(const ProviderScope(child: ExampleCatechismApp()));
+}
+
+class ExampleCatechismApp extends StatelessWidget {
+  const ExampleCatechismApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return CatechismApp(
+      questions: questions,
+      titles: const ['Example Catechism App'],
+      themeData: themeData,
+      configuration: configuration,
+      supportedLocales: locales,
+      customPages: customPages,
+    );
+  }
+}
 
 final List<Question> questions = [
   Question(
@@ -85,8 +108,8 @@ final ThemeData themeData = ThemeData(
 
 final configuration = CatechismConfiguration(
   displayQuestionTitleShortInDetails: false,
-  displayQuestionPrayer: false,
-  displayQuestionNotes: false,
+  displayQuestionPrayer: true,
+  displayQuestionNotes: true,
 );
 
 final List<Locale> locales = [
@@ -94,33 +117,15 @@ final List<Locale> locales = [
   const Locale('es'),
 ];
 
-final List<InfoScreenData> infoScreens = [
-  InfoScreenData(
+final List<CustomPageData> customPages = [
+  CustomPageData(
     title: 'About',
     content: ['This is an example of a catechism app.'],
+    routeName: 'about',
   ),
-  InfoScreenData(
+  CustomPageData(
     title: 'Privacy Policy',
     content: ['We don\'t collect any data.'],
+    routeName: 'privacy',
   ),
 ];
-
-void main() {
-  runApp(const ExampleCatechismApp());
-}
-
-class ExampleCatechismApp extends StatelessWidget {
-  const ExampleCatechismApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return CatechismApp(
-      questions: questions,
-      titles: const ['Example Catechism App'],
-      themeData: themeData,
-      configuration: configuration,
-      supportedLocales: locales,
-      infoScreens: infoScreens,
-    );
-  }
-}

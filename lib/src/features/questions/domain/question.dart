@@ -1,6 +1,5 @@
+import 'package:catechism/src/features/questions/domain/question_reference.dart';
 import 'package:flutter/material.dart';
-
-import 'question_reference.dart';
 
 /// The Question class contains all of the information about a single
 /// catechism question.

@@ -1,12 +1,13 @@
+import 'package:catechism/src/features/configuration/data/configuration_provider.dart';
+import 'package:catechism/src/features/configuration/data/titles_provider.dart';
+import 'package:catechism/src/features/configuration/domain/configuration.dart';
+import 'package:catechism/src/features/custom_pages/data/custom_page_provider.dart';
+import 'package:catechism/src/features/custom_pages/domain/custom_page_data.dart';
+import 'package:catechism/src/features/questions/data/question_provider.dart';
+import 'package:catechism/src/features/questions/domain/question.dart';
+import 'package:catechism/src/routing/app_router.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-
-import './configuration.dart';
-import './models/info_screen_data.dart';
-import './models/question.dart';
-import './models/questions.dart';
-import 'screens/details_screen.dart';
-import 'screens/list_screen.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 /// The CatechismApp class is used to create a catechism app.
 class CatechismApp extends StatelessWidget {
@@ -26,8 +27,8 @@ class CatechismApp extends StatelessWidget {
   /// locales.
   final List<Locale> supportedLocales;
 
-  /// The infoScreens property is used to create the list of info screens.
-  final List<InfoScreenData> infoScreens;
+  /// The customPages property is used to create the list of info screens.
+  final List<CustomPageData> customPages;
 
   /// The CatechismApp constructor is used to create a catechism app.
   CatechismApp({
@@ -36,36 +37,26 @@ class CatechismApp extends StatelessWidget {
     required this.themeData,
     required this.configuration,
     required this.supportedLocales,
-    required this.infoScreens,
-  });
+    required this.customPages,
+  }) {
+    questionProvider = Provider<List<Question>>((ref) => questions);
+    titlesProvider = Provider<List<String>>((ref) => titles);
+    configurationProvider =
+        Provider<CatechismConfiguration>((ref) => configuration);
+    customPageProvider = Provider<List<CustomPageData>>((ref) => customPages);
+  }
 
   /// The build method is used to create the widget.
   @override
   Widget build(BuildContext context) {
-    Map<String, WidgetBuilder> routes = {
-      ListScreen.routeName: (context) => ListScreen(
-            titles: titles,
-            configuration: configuration,
-            infoScreens: infoScreens,
-          ),
-      DetailsScreen.routeName: (context) => DetailsScreen(
-            titles: titles,
-            configuration: configuration,
-          )
-    };
+    final goRouter = CatechismRouter(customPages: customPages).getRouter();
 
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(
-          create: (_) => Questions(questions),
-        ),
-      ],
-      child: MaterialApp(
-        title: titles.join(" "),
-        theme: themeData,
-        supportedLocales: supportedLocales,
-        routes: routes,
-      ),
+    return MaterialApp.router(
+      title: titles.join(" "),
+      theme: themeData,
+      supportedLocales: supportedLocales,
+      routerConfig: goRouter,
+      debugShowCheckedModeBanner: false,
     );
   }
 }

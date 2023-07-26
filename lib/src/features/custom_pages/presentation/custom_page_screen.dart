@@ -1,35 +1,28 @@
+import 'package:catechism/src/common_widgets/top_bar.dart';
+import 'package:catechism/src/features/configuration/data/titles_provider.dart';
+import 'package:catechism/src/features/custom_pages/domain/custom_page_data.dart';
 import 'package:flutter/material.dart';
-
-import '../configuration.dart';
-import '../models/info_screen_data.dart';
-import '../widgets/top_bar.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 /// The InfoScreen class is used to create a screen that displays an optional
 /// additional information screen (e.g. about, help) as well as the catechism
 /// app bar.
-class InfoScreen extends StatelessWidget {
-  /// The titles property is used to create the titles for the app bar.
-  final List<String> titles;
-
-  /// The configuration property is used to create the configuration for the
-  /// InfoScreen class.
-  final CatechismConfiguration configuration;
-
+class CustomPageScreen extends ConsumerWidget {
   /// The infoScreenData property is used to create the info screen data for the
   /// InfoScreen class.
-  final InfoScreenData infoScreenData;
+  final CustomPageData infoScreenData;
 
   /// The InfoScreen constructor is used to create a new instance of the
   /// InfoScreen class.
-  InfoScreen({
-    required this.titles,
-    required this.configuration,
+  CustomPageScreen({
     required this.infoScreenData,
   });
 
   /// The build method is used to create the widget.
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final titles = ref.watch(titlesProvider!);
+
     return Scaffold(
       appBar: TopBar(
         titles,

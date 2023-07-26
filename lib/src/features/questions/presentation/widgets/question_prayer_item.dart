@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class NoteItem extends StatelessWidget {
-  final String note;
+class QuestionPrayerItem extends StatelessWidget {
+  final String paragraph;
 
-  const NoteItem({
-    required this.note,
+  const QuestionPrayerItem({
+    required this.paragraph,
   });
 
   @override
@@ -13,12 +13,12 @@ class NoteItem extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          note,
+          paragraph,
           softWrap: true,
           style: Theme.of(context).textTheme.bodyLarge,
         ),
         SizedBox(
-          height: 50.0,
+          height: 20.0,
         ),
       ],
     );

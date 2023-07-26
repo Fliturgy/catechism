@@ -5,7 +5,9 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [unreleased]
+
+## [0.0.11]
 
 ### Changed
 
@@ -131,7 +133,8 @@ Initial Version
     - displaying the question number in the details screen
     - displaying the question title in the details screen
 
-[unreleased]: https://github.com/fliturgy/catechism/compare/v0.0.10...HEAD
+[unreleased]: https://github.com/fliturgy/catechism/compare/v0.0.11...HEAD
+[0.0.10]: https://github.com/fliturgy/catechism/compare/v0.0.10...v0.0.11
 [0.0.10]: https://github.com/fliturgy/catechism/compare/v0.0.9...v0.0.10
 [0.0.9]: https://github.com/fliturgy/catechism/compare/v0.0.8...v0.0.9
 [0.0.8]: https://github.com/fliturgy/catechism/compare/v0.0.7...v0.0.8

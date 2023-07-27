@@ -21,11 +21,14 @@ class CustomPageScreen extends ConsumerWidget {
   /// The build method is used to create the widget.
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final locale = Localizations.localeOf(context);
+    final languageCode = locale.languageCode;
     final titles = ref.watch(titlesProvider!);
+    final localeTitles = titles.getTitles(languageCode);
 
     return Scaffold(
       appBar: TopBar(
-        titles,
+        localeTitles,
         hasBackButton: true,
       ),
       body: SingleChildScrollView(

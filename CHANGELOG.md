@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [unreleased]
 
+### Added
+
+- Localization support for Questions, Custom Pages, and Titles
+
 ## [0.0.11]
 
 ### Changed

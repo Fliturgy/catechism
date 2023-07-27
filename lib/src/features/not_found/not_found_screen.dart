@@ -1,6 +1,6 @@
+import 'package:catechism/src/common_widgets/top_bar.dart';
 import 'package:catechism/src/features/configuration/data/titles_provider.dart';
 import 'package:catechism/src/features/not_found/empty_placeholder_widget.dart';
-import 'package:catechism/src/common_widgets/top_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -15,10 +15,13 @@ class NotFoundScreen extends ConsumerWidget {
   /// The build method is used to create the widget.
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final locale = Localizations.localeOf(context);
+    final languageCode = locale.languageCode;
     final titles = ref.watch(titlesProvider!);
+    final localeTitles = titles.getTitles(languageCode);
 
     return Scaffold(
-      appBar: TopBar(titles),
+      appBar: TopBar(localeTitles),
       body: EmptyPlaceholderWidget(
         message: '404 - Page not found!',
       ),

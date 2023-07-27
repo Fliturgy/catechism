@@ -31,11 +31,11 @@ class CatechismRouter {
           builder: (context, state) => QuestionListScreen(),
           routes: [
             ...customPages.getAllCustomPages().map(
-                  (infoScreen) => GoRoute(
-                    path: infoScreen.routeName,
-                    name: infoScreen.routeName,
+                  (customPageData) => GoRoute(
+                    path: customPageData.routeName,
+                    name: customPageData.routeName,
                     builder: (context, state) =>
-                        CustomPageScreen(infoScreenData: infoScreen),
+                        CustomPageScreen(customPageData: customPageData),
                   ),
                 ),
             GoRoute(

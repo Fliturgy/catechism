@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// The InfoScreenData class contains all of the information needed to create
+/// The CustomPageData class contains all of the information needed to create
 /// and optional additional information screen (e.g. about, help).
 class CustomPageData {
   /// The icon property is used to create the icon for the screen.
@@ -15,8 +15,8 @@ class CustomPageData {
   /// The routeName property is used to create the route name for the screen.
   final String routeName;
 
-  /// The InfoScreenData constructor is used to create a new instance of the
-  /// InfoScreenData class.
+  /// The CustomPageData constructor is used to create a new instance of the
+  /// CustomPageData class.
   CustomPageData({
     this.icon,
     required this.title,

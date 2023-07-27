@@ -11,7 +11,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Localization support for Questions, Custom Pages, and Titles
+- Localization support for Questions, Custom Pages, and Titles.
+
+### Fixed
+
+- Renamed remaining instances of "infoScreen" to "customPage".
 
 ## [0.0.11]
 

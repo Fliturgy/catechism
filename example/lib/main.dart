@@ -14,17 +14,33 @@ class ExampleCatechismApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CatechismApp(
-      questions: questions,
-      titles: const ['Example Catechism App'],
+      questions: localizedQuestions,
+      titles: localizedTitles,
       themeData: themeData,
       configuration: configuration,
       supportedLocales: locales,
-      customPages: customPages,
+      customPages: localizedCustomPages,
     );
   }
 }
 
-final List<Question> questions = [
+final LocalizedTitles localizedTitles = LocalizedTitles(
+  localizedTitles: {
+    'en': ['Example Catechism App'],
+    'es': ['Ejemplo de aplicación', 'de catecismo'],
+  },
+  defaultTitles: ['Example Catechism App'],
+);
+
+final LocalizedQuestions localizedQuestions = LocalizedQuestions(
+  localizedQuestions: {
+    'en': enQuestions,
+    'es': esQuestions,
+  },
+  defaultQuestions: enQuestions,
+);
+
+final List<Question> enQuestions = [
   Question(
     id: 1,
     title: 'Question 1',
@@ -79,6 +95,43 @@ final List<Question> questions = [
   ),
 ];
 
+final List<Question> esQuestions = [
+  Question(
+    id: 1,
+    title: 'Pregunta 1',
+    titleShort: '1',
+    question: '¿Qué es esto?',
+    answer: 'Este es un ejemplo de una aplicación de catecismo.',
+    references: [
+      QuestionReference(
+        title: 'Fuente 1',
+        content: ['blah blah blah'],
+      ),
+      QuestionReference(
+        title: 'Fuente 2',
+        content: [
+          'yadda',
+          'yadda',
+          'yadda',
+        ],
+      ),
+    ],
+    prayer: [
+      'Padre nuestro que estás en los cielos, santificado sea tu nombre.',
+      'Venga tu reino.',
+      'Hágase tu voluntad, como en el cielo, así también en la tierra.',
+      'Danos hoy nuestro pan de cada día.',
+      'Y perdónanos nuestras deudas, como también nosotros perdonamos a nuestros deudores.',
+      'Y no nos metas en tentación, mas líbranos del mal; porque tuyo es el reino, y el poder, y la gloria, por todos los siglos.',
+      'Amén.',
+    ],
+    notes: [
+      'esta es una nota al pie',
+      'y ahora otro',
+    ],
+  ),
+];
+
 final ThemeData themeData = ThemeData(
   scaffoldBackgroundColor: Colors.white,
   appBarTheme: const AppBarTheme(
@@ -117,7 +170,15 @@ final List<Locale> locales = [
   const Locale('es'),
 ];
 
-final List<CustomPageData> customPages = [
+final LocalizedCustomPages localizedCustomPages = LocalizedCustomPages(
+  localizedCustomPages: {
+    'en': enCustomPages,
+    'es': esCustomPages,
+  },
+  defaultCustomPages: enCustomPages,
+);
+
+final List<CustomPageData> enCustomPages = [
   CustomPageData(
     title: 'About',
     content: ['This is an example of a catechism app.'],
@@ -127,5 +188,18 @@ final List<CustomPageData> customPages = [
     title: 'Privacy Policy',
     content: ['We don\'t collect any data.'],
     routeName: 'privacy',
+  ),
+];
+
+final List<CustomPageData> esCustomPages = [
+  CustomPageData(
+    title: 'Acerca de esta aplicación',
+    content: ['Este es un ejemplo de una aplicación de catecismo.'],
+    routeName: 'about-es',
+  ),
+  CustomPageData(
+    title: 'Política de privacidad',
+    content: ['No recopilamos ningún dato.'],
+    routeName: 'privacy-es',
   ),
 ];

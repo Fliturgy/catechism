@@ -12,24 +12,28 @@ class QuestionListScreen extends ConsumerWidget {
   /// The build method is used to create the widget.
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final locale = Localizations.localeOf(context);
+    final languageCode = locale.languageCode;
     final titles = ref.watch(titlesProvider!);
+    final localeTitles = titles.getTitles(languageCode);
 
     return Scaffold(
       drawer: CatechismDrawer(),
-      appBar: TopBar(titles),
+      appBar: TopBar(localeTitles),
       body: Consumer(
         builder: (context, ref, child) {
           final questions = ref.watch(questionProvider!);
+          final localeQuestions = questions.getQuestions(languageCode);
 
           return ListView.separated(
             padding: const EdgeInsets.all(8.0),
-            itemCount: questions.length,
+            itemCount: localeQuestions.length,
             itemBuilder: (
               BuildContext context,
               int index,
             ) {
               return QuestionListItem(
-                questions[index],
+                localeQuestions[index],
               );
             },
             separatorBuilder: (BuildContext context, int index) =>

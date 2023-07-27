@@ -10,13 +10,16 @@ class CatechismDrawer extends ConsumerWidget {
   /// The build method is used to create the widget.
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final locale = Localizations.localeOf(context);
+    final languageCode = locale.languageCode;
     final customPages = ref.watch(customPageProvider!);
+    final localeCustomPages = customPages.getCustomPages(languageCode);
 
     return Drawer(
       child: Column(
         children: <Widget>[
           SizedBox(height: 50),
-          ...customPages.map((CustomPageData customPage) {
+          ...localeCustomPages.map((CustomPageData customPage) {
             return ListTile(
               leading: customPage.icon != null
                   ? Icon(

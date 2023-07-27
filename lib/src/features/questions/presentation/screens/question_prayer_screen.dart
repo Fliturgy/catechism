@@ -1,6 +1,6 @@
+import 'package:catechism/src/common_widgets/top_bar.dart';
 import 'package:catechism/src/features/questions/data/question_provider.dart';
 import 'package:catechism/src/features/questions/presentation/widgets/question_prayer_item.dart';
-import 'package:catechism/src/common_widgets/top_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -23,8 +23,11 @@ class QuestionPrayerScreen extends StatelessWidget {
         hasCloseButton: true,
       ),
       body: Consumer(builder: (context, ref, child) {
+        final locale = Localizations.localeOf(context);
+        final languageCode = locale.languageCode;
         final questions = ref.watch(questionProvider!);
-        final question = questions[questionId - 1];
+        final localeQuestions = questions.getQuestions(languageCode);
+        final question = localeQuestions[questionId - 1];
 
         return SingleChildScrollView(
           child: Padding(

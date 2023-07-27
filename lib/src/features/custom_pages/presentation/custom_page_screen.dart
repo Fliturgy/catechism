@@ -4,28 +4,31 @@ import 'package:catechism/src/features/custom_pages/domain/custom_page_data.dart
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-/// The InfoScreen class is used to create a screen that displays an optional
-/// additional information screen (e.g. about, help) as well as the catechism
-/// app bar.
+/// The CustomPageScreen class is used to create a screen that displays an
+/// optional additional information screen (e.g. about, help) as well as the
+/// catechism app bar.
 class CustomPageScreen extends ConsumerWidget {
-  /// The infoScreenData property is used to create the info screen data for the
-  /// InfoScreen class.
-  final CustomPageData infoScreenData;
+  /// The CustomPageScreenData property is used to create the info screen data
+  /// for the CustomPageScreen class.
+  final CustomPageData customPageData;
 
-  /// The InfoScreen constructor is used to create a new instance of the
-  /// InfoScreen class.
+  /// The CustomPageScreen constructor is used to create a new instance of the
+  /// CustomPageScreen class.
   CustomPageScreen({
-    required this.infoScreenData,
+    required this.customPageData,
   });
 
   /// The build method is used to create the widget.
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final locale = Localizations.localeOf(context);
+    final languageCode = locale.languageCode;
     final titles = ref.watch(titlesProvider!);
+    final localeTitles = titles.getTitles(languageCode);
 
     return Scaffold(
       appBar: TopBar(
-        titles,
+        localeTitles,
         hasBackButton: true,
       ),
       body: SingleChildScrollView(
@@ -38,7 +41,7 @@ class CustomPageScreen extends ConsumerWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                infoScreenData.title,
+                customPageData.title,
                 style: Theme.of(context).textTheme.headlineLarge,
               ),
               SizedBox(
@@ -51,7 +54,7 @@ class CustomPageScreen extends ConsumerWidget {
                 height: 10.0,
               ),
               Text(
-                infoScreenData.content.join("\n\n"),
+                customPageData.content.join("\n\n"),
                 softWrap: true,
                 // textAlign: TextAlign.justify,
                 style: Theme.of(context).textTheme.bodyLarge,

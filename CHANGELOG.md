@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [unreleased]
 
+## [0.0.12]
+
+### Added
+
+- Localization support for Questions, Custom Pages, and Titles.
+
+### Fixed
+
+- Renamed remaining instances of "infoScreen" to "customPage".
+
 ## [0.0.11]
 
 ### Changed
@@ -133,7 +143,8 @@ Initial Version
     - displaying the question number in the details screen
     - displaying the question title in the details screen
 
-[unreleased]: https://github.com/fliturgy/catechism/compare/v0.0.11...HEAD
+[unreleased]: https://github.com/fliturgy/catechism/compare/v0.0.12...HEAD
+[0.0.12]: https://github.com/fliturgy/catechism/compare/v0.0.11...v0.0.12
 [0.0.11]: https://github.com/fliturgy/catechism/compare/v0.0.10...v0.0.11
 [0.0.10]: https://github.com/fliturgy/catechism/compare/v0.0.9...v0.0.10
 [0.0.9]: https://github.com/fliturgy/catechism/compare/v0.0.8...v0.0.9

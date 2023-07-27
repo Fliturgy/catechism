@@ -1,5 +1,5 @@
 name: catechism
-version: 0.0.11
+version: 0.0.12
 
 description: The catechism library is a framework for creating a catechism (question and answer learning tool) application.
 homepage: https://github.com/fliturgy/catechism

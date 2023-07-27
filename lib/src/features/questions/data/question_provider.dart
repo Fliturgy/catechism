@@ -1,4 +1,4 @@
-import 'package:catechism/src/features/questions/domain/question.dart';
+import 'package:catechism/src/features/questions/domain/localized_questions.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-Provider<List<Question>>? questionProvider;
+Provider<LocalizedQuestions>? questionProvider;

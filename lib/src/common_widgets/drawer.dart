@@ -36,7 +36,7 @@ class CatechismDrawer extends ConsumerWidget {
                 context.goNamed(customPage.routeName);
               },
             );
-          }).toList(),
+          }),
         ],
       ),
     );

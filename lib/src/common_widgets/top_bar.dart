@@ -24,12 +24,11 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
   /// CatechismAppBar class.
   TopBar(
     this.titles, {
-    Key? key,
+    super.key,
     this.hasBackButton = false,
     this.hasCloseButton = false,
   })  : preferredSize = Size.fromHeight(
-            (titles.isNotEmpty ? titles.length : 1) * 60.0 + 20.0),
-        super(key: key);
+            (titles.isNotEmpty ? titles.length : 1) * 60.0 + 20.0);
 
   /// The build method is used to create the widget.
   @override

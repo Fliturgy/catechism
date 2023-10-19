@@ -7,6 +7,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [unreleased]
 
+### Changes
+
+- Upgraded go_router (12.0.0), flutter_riverpod (2.4.4), and font_awesome_flutter (10.6.0) dependencies and pinned to the latest version
+- Upgraded Dart SDK dependency to the latest version (3.1.4)
+- Upgraded lints dev dependency and pinned to the latest version (3.0.0)
+- Upgraded test dev dependency to the latest version (1.24.3) that works with the Flutter SDK associated with the latest version of the Dart SDK (3.1.4)
+
+### Fixed
+
+- Two minor linting issues that appeared after upgrading lints to the latest version:
+
+```
+Analyzing catechism...                                                  
+
+   info • Unnecessary use of 'toList' in a spread • lib/src/common_widgets/drawer.dart:39:14 • unnecessary_to_list_in_spreads
+   info • Convert 'key' to a super parameter • lib/src/common_widgets/top_bar.dart:25:3 • use_super_parameters
+```
+
 ## [0.0.12]
 
 ### Added

@@ -1,6 +1,6 @@
+import 'package:catechism/src/common_widgets/bottom_bar.dart';
 import 'package:catechism/src/features/configuration/data/configuration_provider.dart';
 import 'package:catechism/src/features/questions/domain/question.dart';
-import 'package:catechism/src/common_widgets/bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

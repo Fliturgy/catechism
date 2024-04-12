@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [unreleased]
 
+### Changes
+
+- Upgraded go_router to 13.2.4
+- Upgraded Dart SDK to the latest version (3.3.3)
+
 ## [0.0.13]
 
 ### Changes

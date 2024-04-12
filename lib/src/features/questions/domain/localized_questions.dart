@@ -9,7 +9,7 @@ class LocalizedQuestions {
     required this.defaultQuestions,
   });
 
-  List<Question> getQuestions(String locale) {
-    return localizedQuestions[locale] ?? defaultQuestions;
+  List<Question> getQuestions(String languageCode) {
+    return localizedQuestions[languageCode] ?? defaultQuestions;
   }
 }

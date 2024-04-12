@@ -9,8 +9,12 @@ class LocalizedCustomPages {
     required this.defaultCustomPages,
   });
 
-  List<CustomPageData> getCustomPages(String locale) {
-    return localizedCustomPages[locale] ?? defaultCustomPages;
+  List<CustomPageData> getCustomPages(String languageCode) {
+    if (localizedCustomPages.containsKey(languageCode)) {
+      return localizedCustomPages[languageCode]!;
+    }
+
+    return defaultCustomPages;
   }
 
   List<CustomPageData> getAllCustomPages() {

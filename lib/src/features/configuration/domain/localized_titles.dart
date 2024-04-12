@@ -7,7 +7,7 @@ class LocalizedTitles {
     required this.defaultTitles,
   });
 
-  List<String> getTitles(String locale) {
-    return localizedTitles[locale] ?? defaultTitles;
+  List<String> getTitles(String languageCode) {
+    return localizedTitles[languageCode] ?? defaultTitles;
   }
 }

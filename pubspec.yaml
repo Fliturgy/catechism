@@ -5,7 +5,7 @@ description: The catechism library is a framework for creating a catechism (ques
 homepage: https://github.com/fliturgy/catechism
 
 environment:
-  sdk: ^3.1.4
+  sdk: ^3.3.3
 
 dependencies:
   flutter:
@@ -13,7 +13,7 @@ dependencies:
   font_awesome_flutter: 10.7.0
   flutter_localizations:
     sdk: flutter
-  go_router: 13.2.0
+  go_router: 13.2.4
   flutter_riverpod: 2.4.10
 
 dev_dependencies:

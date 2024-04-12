@@ -164,7 +164,8 @@ Initial Version
     - displaying the question number in the details screen
     - displaying the question title in the details screen
 
-[unreleased]: https://github.com/fliturgy/catechism/compare/v0.0.12...HEAD
+[unreleased]: https://github.com/fliturgy/catechism/compare/v0.0.13...HEAD
+[0.0.13]: https://github.com/fliturgy/catechism/compare/v0.0.12...v0.0.13
 [0.0.12]: https://github.com/fliturgy/catechism/compare/v0.0.11...v0.0.12
 [0.0.11]: https://github.com/fliturgy/catechism/compare/v0.0.10...v0.0.11
 [0.0.10]: https://github.com/fliturgy/catechism/compare/v0.0.9...v0.0.10

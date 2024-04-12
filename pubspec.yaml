@@ -14,7 +14,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   go_router: 13.2.4
-  flutter_riverpod: 2.4.10
+  flutter_riverpod: 2.5.1
 
 dev_dependencies:
   lints: 3.0.0

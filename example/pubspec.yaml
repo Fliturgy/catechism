@@ -3,7 +3,7 @@ description: An example catechism app.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 environment:
-  sdk: ^3.19.5
+  sdk: ^3.3.3
 
 dependencies:
   flutter:

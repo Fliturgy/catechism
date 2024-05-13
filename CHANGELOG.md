@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [unreleased]
 
+- Dev Dependency upgrades:
+  - lints 3.0.0 -> 4.0.0
+- Dependency upgrades:
+  - go_router 13.2.4 -> 14.1.0
+
 ## [0.0.14]
 
 ### Changes

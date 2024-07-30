@@ -7,14 +7,30 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [unreleased]
 
+## [0.0.15]
+
+### Added
+
+- Support for localized messages with the intl library for the "Show Answer" and "Hide Answer" buttons
+
+### Changed
+
 - Dev Dependency upgrades:
+  - flutter_lints 2.0.3 -> 4.0.0
   - lints 3.0.0 -> 4.0.0
 - Dependency upgrades:
   - go_router 13.2.4 -> 14.2.1
+  - test 1.24.3 -> 1.25.2
+- Environment upgrades:
+  - sdk 3.3.3 -> 3.4.4
+
+### Removed
+
+- The circle avatar for the question number in the question list item widget
 
 ## [0.0.14]
 
-### Changes
+### Changed
 
 - Upgraded go_router to 13.2.4
 - Upgraded Dart SDK to the latest version (3.3.3)
@@ -22,7 +38,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.0.13]
 
-### Changes
+### Changed
 
 - Upgraded go_router (12.0.1), flutter_riverpod (2.4.5), and font_awesome_flutter (10.6.0) dependencies and pinned to the latest version
 - Upgraded Dart SDK dependency to the latest version (3.1.4)

@@ -16,7 +16,7 @@ jobs:
       - name: Install and set Flutter version
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.10.6'
+          flutter-version: '3.22.3'
       
       - name: Restore packages
         run: flutter pub get

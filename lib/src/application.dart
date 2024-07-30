@@ -9,6 +9,7 @@ import 'package:catechism/src/features/questions/domain/localized_questions.dart
 import 'package:catechism/src/routing/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 /// The CatechismApp class is used to create a catechism app.
@@ -58,6 +59,7 @@ class CatechismApp extends StatelessWidget {
       theme: themeData,
       supportedLocales: supportedLocales,
       localizationsDelegates: [
+        AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,

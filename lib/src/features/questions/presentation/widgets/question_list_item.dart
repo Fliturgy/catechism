@@ -24,12 +24,13 @@ class QuestionListItem extends ConsumerWidget {
 
     return ListTile(
       leading: configuration.displayQuestionTitleShortInList
-          ? CircleAvatar(
+          ? Container(
+              width: 40,
               child: Text(
                 question.titleShort ?? "",
                 style: Theme.of(context).textTheme.headlineMedium,
+                textAlign: configuration.questionShortTitleListAlignment,
               ),
-              backgroundColor: Theme.of(context).primaryColorLight,
             )
           : null,
       title: Text(

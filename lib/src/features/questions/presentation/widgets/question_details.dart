@@ -2,6 +2,7 @@ import 'package:catechism/src/features/configuration/data/configuration_provider
 import 'package:catechism/src/features/questions/domain/question.dart';
 import 'package:catechism/src/common_widgets/bottom_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 /// The QuestionDetailsItem class is used to display the details of a
@@ -80,7 +81,9 @@ class _QuestionDetailsState extends State<QuestionDetails> {
                   Offstage(
                     offstage: !configuration.allowHideAnswer,
                     child: OutlinedButton(
-                      child: Text(_isVisible ? 'Hide Answer' : 'Show Answer'),
+                      child: Text(_isVisible
+                          ? AppLocalizations.of(context)!.hideAnswer
+                          : AppLocalizations.of(context)!.showAnswer),
                       onPressed: () {
                         setState(() {
                           _isVisible = !_isVisible;

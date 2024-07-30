@@ -56,6 +56,11 @@ class CatechismConfiguration {
   /// hide the answer in the details page. This defaults to true.
   final bool allowHideAnswer;
 
+  /// The questionShortTitleListAlignment property is used to determine the
+  /// alignment of the question short title in the list page. This defaults to
+  /// TextAlign.center.
+  final TextAlign questionShortTitleListAlignment;
+
   /// The CatechismConfiguration constructor is used to create a new instance of
   /// the CatechismConfiguration class.
   CatechismConfiguration({
@@ -70,6 +75,7 @@ class CatechismConfiguration {
     this.displayQuestionPrayer = true,
     questionPrayerIcon,
     this.allowHideAnswer = true,
+    this.questionShortTitleListAlignment = TextAlign.center,
   })  : questionReferencesIcon =
             questionReferencesIcon ?? Icon(Icons.menu_book_outlined),
         questionNotesIcon =

@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 /// The CatechismAppBar class is used to create a catechism app bar,
 /// containing the title of the catechism app as well as either the back
 /// button or the menu button depending on the context.
-class TopBar extends ConsumerWidget implements PreferredSizeWidget {
+class TopBar extends StatelessWidget implements PreferredSizeWidget {
   /// The titles property is used to create the titles for the app bar.
   final List<String> titles;
 
@@ -28,12 +27,12 @@ class TopBar extends ConsumerWidget implements PreferredSizeWidget {
     super.key,
     this.hasBackButton = false,
     this.hasCloseButton = false,
-  }) : preferredSize = Size.fromHeight(
+  })  : preferredSize = Size.fromHeight(
             (titles.isNotEmpty ? titles.length : 1) * 60.0 + 20.0);
 
   /// The build method is used to create the widget.
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
     return AppBar(
       centerTitle: true,
       automaticallyImplyLeading: hasBackButton || !hasCloseButton,
@@ -50,9 +49,7 @@ class TopBar extends ConsumerWidget implements PreferredSizeWidget {
             ? CloseButton(
                 color: Theme.of(context).primaryColor,
               )
-            : SizedBox(
-                width: 50.0,
-              ),
+            : SizedBox(width: 50.0),
       ],
       titleSpacing: 50.0,
       title: titles.isNotEmpty

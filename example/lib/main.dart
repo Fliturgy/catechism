@@ -172,9 +172,6 @@ final configuration = CatechismConfiguration(
 final List<Locale> locales = [
   const Locale('en'),
   const Locale('es'),
-  const Locale('fr'),
-  const Locale('ja'),
-  const Locale('pt'),
 ];
 
 final LocalizedCustomPages localizedCustomPages = LocalizedCustomPages(

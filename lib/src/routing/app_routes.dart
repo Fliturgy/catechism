@@ -4,4 +4,5 @@ enum AppRoute {
   references,
   prayer,
   notes,
+  settings,
 }

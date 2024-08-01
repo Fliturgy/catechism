@@ -1,3 +1,4 @@
+import 'package:catechism/src/features/configuration/presentation/screens/settings_screen.dart';
 import 'package:catechism/src/features/custom_pages/domain/localized_custom_pages.dart';
 import 'package:catechism/src/features/custom_pages/presentation/custom_page_screen.dart';
 import 'package:catechism/src/features/not_found/not_found_screen.dart';
@@ -38,6 +39,11 @@ class CatechismRouter {
                         CustomPageScreen(customPageData: customPageData),
                   ),
                 ),
+            GoRoute(
+              path: 'settings',
+              name: AppRoute.settings.name,
+              builder: (context, state) => SettingsScreen(),
+            ),
             GoRoute(
               path: 'details/:questionId',
               name: AppRoute.details.name,

@@ -1,9 +1,12 @@
+import 'package:catechism/src/features/configuration/data/language_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 /// The CatechismAppBar class is used to create a catechism app bar,
 /// containing the title of the catechism app as well as either the back
 /// button or the menu button depending on the context.
-class TopBar extends StatelessWidget implements PreferredSizeWidget {
+class TopBar extends ConsumerWidget implements PreferredSizeWidget {
   /// The titles property is used to create the titles for the app bar.
   final List<String> titles;
 
@@ -27,12 +30,12 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
     super.key,
     this.hasBackButton = false,
     this.hasCloseButton = false,
-  })  : preferredSize = Size.fromHeight(
+  }) : preferredSize = Size.fromHeight(
             (titles.isNotEmpty ? titles.length : 1) * 60.0 + 20.0);
 
   /// The build method is used to create the widget.
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return AppBar(
       centerTitle: true,
       automaticallyImplyLeading: hasBackButton || !hasCloseButton,
@@ -49,7 +52,12 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
             ? CloseButton(
                 color: Theme.of(context).primaryColor,
               )
-            : SizedBox(width: 50.0),
+            : SizedBox(
+                width: 50.0,
+                child: const Center(
+                  child: DropdownMenuExample(),
+                ),
+              ),
       ],
       titleSpacing: 50.0,
       title: titles.isNotEmpty
@@ -64,6 +72,36 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
               );
             }).toList())
           : null,
+    );
+  }
+}
+
+class DropdownMenuExample extends ConsumerStatefulWidget {
+  const DropdownMenuExample({super.key});
+
+  @override
+  ConsumerState<DropdownMenuExample> createState() => _DropdownMenuExampleState();
+}
+
+class _DropdownMenuExampleState extends ConsumerState<DropdownMenuExample> {
+  String dropdownValue = AppLocalizations.supportedLocales.first.languageCode;
+
+  @override
+  Widget build(BuildContext context) {
+    return DropdownMenu<String>(
+      initialSelection: ref.watch(languageProvider),
+      onSelected: (String? value) {
+        // This is called when the user selects an item.
+        setState(() {
+          dropdownValue = value!;
+          ref.read(languageProvider.notifier).setLanguageCode(value);
+        });
+      },
+      dropdownMenuEntries: AppLocalizations.supportedLocales
+          .map<DropdownMenuEntry<String>>((locale) {
+        return DropdownMenuEntry<String>(
+            value: locale.languageCode, label: locale.languageCode);
+      }).toList(),
     );
   }
 }

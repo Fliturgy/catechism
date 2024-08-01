@@ -1,4 +1,5 @@
 import 'package:catechism/src/common_widgets/top_bar.dart';
+import 'package:catechism/src/features/configuration/data/language_provider.dart';
 import 'package:catechism/src/features/configuration/data/titles_provider.dart';
 import 'package:catechism/src/features/questions/data/question_provider.dart';
 import 'package:catechism/src/features/questions/presentation/widgets/question_details.dart';
@@ -25,8 +26,7 @@ class QuestionDetailsScreen extends ConsumerWidget {
     final PageController controller = PageController(
       initialPage: questionId - 1,
     );
-    final locale = Localizations.localeOf(context);
-    final languageCode = locale.languageCode;
+    final languageCode = ref.watch(languageProvider);
     final titles = ref.watch(titlesProvider!);
     final localeTitles = titles.getTitles(languageCode);
 

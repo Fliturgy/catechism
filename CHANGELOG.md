@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [unreleased]
 
+### Added
+
+- Ability to select a language and switch languages manually
+
 ## [0.0.15]
 
 ### Added

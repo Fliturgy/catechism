@@ -1,3 +1,4 @@
+import 'package:catechism/src/features/configuration/data/language_provider.dart';
 import 'package:catechism/src/features/custom_pages/data/custom_page_provider.dart';
 import 'package:catechism/src/features/custom_pages/domain/custom_page_data.dart';
 import 'package:flutter/material.dart';
@@ -10,8 +11,7 @@ class CatechismDrawer extends ConsumerWidget {
   /// The build method is used to create the widget.
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final locale = Localizations.localeOf(context);
-    final languageCode = locale.languageCode;
+    final languageCode = ref.watch(languageProvider);
     final customPages = ref.watch(customPageProvider!);
     final localeCustomPages = customPages.getCustomPages(languageCode);
 
@@ -37,6 +37,20 @@ class CatechismDrawer extends ConsumerWidget {
               },
             );
           }),
+          ListTile(
+            leading: Icon(
+              Icons.settings,
+              size: 22,
+            ),
+            title: Text(
+              'Settings',
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
+            onTap: () {
+              Scaffold.of(context).openEndDrawer();
+              context.goNamed('settings');
+            },
+          )
         ],
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:catechism/src/common_widgets/top_bar.dart';
+import 'package:catechism/src/features/configuration/data/language_provider.dart';
 import 'package:catechism/src/features/questions/data/question_provider.dart';
 import 'package:catechism/src/features/questions/presentation/widgets/question_note_item.dart';
 import 'package:flutter/material.dart';
@@ -23,8 +24,7 @@ class QuestionNotesScreen extends StatelessWidget {
         hasCloseButton: true,
       ),
       body: Consumer(builder: (context, ref, child) {
-        final locale = Localizations.localeOf(context);
-        final languageCode = locale.languageCode;
+        final languageCode = ref.watch(languageProvider);
         final questions = ref.watch(questionProvider!);
         final localeQuestions = questions.getQuestions(languageCode);
         final question = localeQuestions[questionId - 1];

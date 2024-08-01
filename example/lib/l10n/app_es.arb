@@ -1,4 +1,6 @@
 {
   "showAnswer": "Muestra la respuesta",
-  "hideAnswer": "Oculta la respuesta"
+  "hideAnswer": "Oculta la respuesta",
+  "settings": "Ajustes",
+  "selectLanguage": "Selecciona un idioma"
 }

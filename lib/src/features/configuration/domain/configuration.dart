@@ -61,6 +61,10 @@ class CatechismConfiguration {
   /// TextAlign.center.
   final TextAlign questionShortTitleListAlignment;
 
+  /// The settingsIcon property is used to determine the icon used to display
+  /// the settings page in the drawer. This defaults to the settings icon.
+  final Widget? settingsIcon;
+
   /// The CatechismConfiguration constructor is used to create a new instance of
   /// the CatechismConfiguration class.
   CatechismConfiguration({
@@ -76,6 +80,7 @@ class CatechismConfiguration {
     questionPrayerIcon,
     this.allowHideAnswer = true,
     this.questionShortTitleListAlignment = TextAlign.center,
+    this.settingsIcon,
   })  : questionReferencesIcon =
             questionReferencesIcon ?? Icon(Icons.menu_book_outlined),
         questionNotesIcon =

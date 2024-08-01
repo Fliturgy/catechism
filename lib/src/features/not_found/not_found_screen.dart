@@ -1,4 +1,5 @@
 import 'package:catechism/src/common_widgets/top_bar.dart';
+import 'package:catechism/src/features/configuration/data/language_provider.dart';
 import 'package:catechism/src/features/configuration/data/titles_provider.dart';
 import 'package:catechism/src/features/not_found/empty_placeholder_widget.dart';
 import 'package:flutter/material.dart';
@@ -15,8 +16,7 @@ class NotFoundScreen extends ConsumerWidget {
   /// The build method is used to create the widget.
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final locale = Localizations.localeOf(context);
-    final languageCode = locale.languageCode;
+    final languageCode = ref.watch(languageProvider);
     final titles = ref.watch(titlesProvider!);
     final localeTitles = titles.getTitles(languageCode);
 

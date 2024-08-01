@@ -1,4 +1,5 @@
 import 'package:catechism/src/features/configuration/data/configuration_provider.dart';
+import 'package:catechism/src/features/configuration/data/language_provider.dart';
 import 'package:catechism/src/features/questions/domain/question.dart';
 import 'package:catechism/src/common_widgets/bottom_bar.dart';
 import 'package:flutter/material.dart';
@@ -80,15 +81,23 @@ class _QuestionDetailsState extends State<QuestionDetails> {
                   ),
                   Offstage(
                     offstage: !configuration.allowHideAnswer,
-                    child: OutlinedButton(
-                      child: Text(_isVisible
-                          ? AppLocalizations.of(context)!.hideAnswer
-                          : AppLocalizations.of(context)!.showAnswer),
-                      onPressed: () {
-                        setState(() {
-                          _isVisible = !_isVisible;
-                        });
-                      },
+                    child: Localizations.override(
+                      context: context,
+                      locale: Locale(ref.watch(languageProvider)),
+                      child: Builder(
+                        builder: (context) {
+                          return OutlinedButton(
+                            child: Text(_isVisible
+                                ? AppLocalizations.of(context)!.hideAnswer
+                                : AppLocalizations.of(context)!.showAnswer),
+                            onPressed: () {
+                              setState(() {
+                                _isVisible = !_isVisible;
+                              });
+                            },
+                          );
+                        }
+                      ),
                     ),
                   ),
                   SizedBox(

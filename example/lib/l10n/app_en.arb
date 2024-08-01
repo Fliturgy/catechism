@@ -1,4 +1,6 @@
 {
   "showAnswer": "Show Answer",
-  "hideAnswer": "Hide Answer"
+  "hideAnswer": "Hide Answer",
+  "settings": "Settings",
+  "selectLanguage": "Select a language"
 }

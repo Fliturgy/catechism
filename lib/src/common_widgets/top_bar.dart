@@ -1,6 +1,4 @@
-import 'package:catechism/src/features/configuration/data/language_provider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 /// The CatechismAppBar class is used to create a catechism app bar,
@@ -54,9 +52,6 @@ class TopBar extends ConsumerWidget implements PreferredSizeWidget {
               )
             : SizedBox(
                 width: 50.0,
-                child: const Center(
-                  child: DropdownMenuExample(),
-                ),
               ),
       ],
       titleSpacing: 50.0,
@@ -72,36 +67,6 @@ class TopBar extends ConsumerWidget implements PreferredSizeWidget {
               );
             }).toList())
           : null,
-    );
-  }
-}
-
-class DropdownMenuExample extends ConsumerStatefulWidget {
-  const DropdownMenuExample({super.key});
-
-  @override
-  ConsumerState<DropdownMenuExample> createState() => _DropdownMenuExampleState();
-}
-
-class _DropdownMenuExampleState extends ConsumerState<DropdownMenuExample> {
-  String dropdownValue = AppLocalizations.supportedLocales.first.languageCode;
-
-  @override
-  Widget build(BuildContext context) {
-    return DropdownMenu<String>(
-      initialSelection: ref.watch(languageProvider),
-      onSelected: (String? value) {
-        // This is called when the user selects an item.
-        setState(() {
-          dropdownValue = value!;
-          ref.read(languageProvider.notifier).setLanguageCode(value);
-        });
-      },
-      dropdownMenuEntries: AppLocalizations.supportedLocales
-          .map<DropdownMenuEntry<String>>((locale) {
-        return DropdownMenuEntry<String>(
-            value: locale.languageCode, label: locale.languageCode);
-      }).toList(),
     );
   }
 }

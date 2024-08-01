@@ -163,11 +163,18 @@ final configuration = CatechismConfiguration(
   displayQuestionTitleShortInDetails: false,
   displayQuestionPrayer: true,
   displayQuestionNotes: true,
+  settingsIcon: const Icon(
+    Icons.settings,
+    // size: 22,
+  ),
 );
 
 final List<Locale> locales = [
   const Locale('en'),
   const Locale('es'),
+  const Locale('fr'),
+  const Locale('ja'),
+  const Locale('pt'),
 ];
 
 final LocalizedCustomPages localizedCustomPages = LocalizedCustomPages(

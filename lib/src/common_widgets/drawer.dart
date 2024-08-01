@@ -1,7 +1,9 @@
+import 'package:catechism/src/features/configuration/data/configuration_provider.dart';
 import 'package:catechism/src/features/configuration/data/language_provider.dart';
 import 'package:catechism/src/features/custom_pages/data/custom_page_provider.dart';
 import 'package:catechism/src/features/custom_pages/domain/custom_page_data.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
@@ -37,19 +39,24 @@ class CatechismDrawer extends ConsumerWidget {
               },
             );
           }),
-          ListTile(
-            leading: Icon(
-              Icons.settings,
-              size: 22,
+          Localizations.override(
+            context: context,
+            locale: Locale(ref.watch(languageProvider)),
+            child: Builder(
+              builder: (context) {
+                return ListTile(
+                  leading: ref.watch(configurationProvider!).settingsIcon,
+                  title: Text(
+                    AppLocalizations.of(context)!.settings,
+                    style: Theme.of(context).textTheme.bodyMedium,
+                  ),
+                  onTap: () {
+                    Scaffold.of(context).openEndDrawer();
+                    context.goNamed('settings');
+                  },
+                );
+              }
             ),
-            title: Text(
-              'Settings',
-              style: Theme.of(context).textTheme.bodyMedium,
-            ),
-            onTap: () {
-              Scaffold.of(context).openEndDrawer();
-              context.goNamed('settings');
-            },
           )
         ],
       ),

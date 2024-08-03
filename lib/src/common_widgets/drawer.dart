@@ -39,11 +39,11 @@ class CatechismDrawer extends ConsumerWidget {
               },
             );
           }),
-          Localizations.override(
-            context: context,
-            locale: Locale(ref.watch(languageProvider)),
-            child: Builder(
-              builder: (context) {
+          if (ref.watch(configurationProvider!).showSettings)
+            Localizations.override(
+              context: context,
+              locale: Locale(ref.watch(languageProvider)),
+              child: Builder(builder: (context) {
                 return ListTile(
                   leading: ref.watch(configurationProvider!).settingsIcon,
                   title: Text(
@@ -55,9 +55,8 @@ class CatechismDrawer extends ConsumerWidget {
                     context.goNamed('settings');
                   },
                 );
-              }
-            ),
-          )
+              }),
+            )
         ],
       ),
     );

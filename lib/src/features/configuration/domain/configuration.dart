@@ -65,6 +65,15 @@ class CatechismConfiguration {
   /// the settings page in the drawer. This defaults to the settings icon.
   final Widget? settingsIcon;
 
+  /// The showSettings property is used to determine whether the settings page
+  /// is displayed in the drawer. This defaults to true.
+  final bool showSettings;
+
+  /// The showSettingsLanguageSelector property is used to determine whether
+  /// the language selector is displayed in the settings page. This defaults to
+  /// true.
+  final bool showSettingsLanguageSelector;
+
   /// The CatechismConfiguration constructor is used to create a new instance of
   /// the CatechismConfiguration class.
   CatechismConfiguration({
@@ -81,6 +90,8 @@ class CatechismConfiguration {
     this.allowHideAnswer = true,
     this.questionShortTitleListAlignment = TextAlign.center,
     this.settingsIcon,
+    this.showSettings = true,
+    this.showSettingsLanguageSelector = true,
   })  : questionReferencesIcon =
             questionReferencesIcon ?? Icon(Icons.menu_book_outlined),
         questionNotesIcon =

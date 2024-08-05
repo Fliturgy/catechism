@@ -1,7 +1,6 @@
 import 'package:catechism/src/common_widgets/top_bar.dart';
 import 'package:catechism/src/features/configuration/data/language_provider.dart';
 import 'package:catechism/src/features/questions/data/question_provider.dart';
-import 'package:catechism/src/features/questions/presentation/widgets/question_note_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -35,10 +34,9 @@ class QuestionNotesScreen extends StatelessWidget {
               vertical: 10.0,
               horizontal: 35.0,
             ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children:
-                  question.notes.map((e) => QuestionNoteItem(note: e)).toList(),
+            child: DefaultTextStyle(
+              child: question.notes!,
+              style: Theme.of(context).textTheme.bodyLarge!,
             ),
           ),
         );

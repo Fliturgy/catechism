@@ -43,92 +43,112 @@ final LocalizedQuestions localizedQuestions = LocalizedQuestions(
 final List<Question> enQuestions = [
   Question(
     id: 1,
-    title: 'Question 1',
-    titleShort: '1',
-    question: 'What is this?',
-    answer: 'This is an example of a catechism app.',
+    title: const Text('Question 1'),
+    titleShort: const Text('1'),
+    question: const Text('What is this?'),
+    answer: const Text('This is an example of a catechism app.'),
     references: [
       QuestionReference(
-        title: 'Source 1',
-        content: ['blah blah blah'],
+        title: const Text('Source 1'),
+        content: const Text('blah blah blah'),
       ),
       QuestionReference(
-        title: 'Source XYZ',
-        content: [
-          'yadda',
-          'yadda',
-          'yadda',
-        ],
+        title: const Text('Source XYZ'),
+        content: Text(
+          [
+            'yadda',
+            'yadda',
+            'yadda',
+          ].join('\n'),
+        ),
       ),
     ],
     image: 'assets/graphics/question-mark.png',
   ),
   Question(
     id: 2,
-    title: 'Question 2',
-    titleShort: '2',
-    question: 'Why a catechism?',
-    answer: 'It\'s an effective learning tool.',
-    prayer: [
-      'Our Father which art in heaven, Hallowed be thy name.',
-      'Thy kingdom come.',
-      'Thy will be done in earth, as it is in heaven.',
-      'Give us this day our daily bread.',
-      'And forgive us our debts, as we forgive our debtors.',
-      'And lead us not into temptation, but deliver us from evil:',
-      'For thine is the kingdom, and the power, and the glory, for ever.',
-      'Amen.',
-    ],
+    title: const Text('Question 2'),
+    titleShort: const Text('2'),
+    question: const Text('Why a catechism?'),
+    answer: const Text('It\'s an effective learning tool.'),
+    prayer: Text(
+      [
+        'Our Father which art in heaven, Hallowed be thy name.',
+        'Thy kingdom come.',
+        'Thy will be done in earth, as it is in heaven.',
+        'Give us this day our daily bread.',
+        'And forgive us our debts, as we forgive our debtors.',
+        'And lead us not into temptation, but deliver us from evil:',
+        'For thine is the kingdom, and the power, and the glory, for ever.',
+        'Amen.',
+      ].join('\n'),
+    ),
   ),
   Question(
     id: 3,
-    title: 'Question 3',
-    titleShort: '3',
-    question:
-        'What do really long questions look like? Do they wrap properly? Do they align properly?',
-    answer:
-        'Yes, we have tested really long questions (and answers) to make sure that they look good and wrap and align properly.',
-    notes: [
-      'this is a footnote',
-      'and now another one',
-    ],
+    title: const Text('Question 3'),
+    titleShort: const Text('3'),
+    question: const Text(
+      'What do really long questions look like? Do they wrap properly? Do they align properly?',
+    ),
+    answer: const Text(
+      'Yes, we have tested really long questions (and answers) to make sure that they look good and wrap and align properly.',
+    ),
+    notes: const Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text('this is a footnote'),
+        SizedBox(height: 50.0),
+        Text('and now another one'),
+        SizedBox(height: 50.0),
+      ],
+    ),
   ),
 ];
 
 final List<Question> esQuestions = [
   Question(
     id: 1,
-    title: 'Pregunta 1',
-    titleShort: '1',
-    question: '¿Qué es esto?',
-    answer: 'Este es un ejemplo de una aplicación de catecismo.',
+    title: const Text('Pregunta 1'),
+    titleShort: const Text('1'),
+    question: const Text('¿Qué es esto?'),
+    answer: const Text('Este es un ejemplo de una aplicación de catecismo.'),
     references: [
       QuestionReference(
-        title: 'Fuente 1',
-        content: ['blah blah blah'],
+        title: const Text('Fuente 1'),
+        content: const Text('blah blah blah'),
       ),
       QuestionReference(
-        title: 'Fuente 2',
-        content: [
-          'yadda',
-          'yadda',
-          'yadda',
-        ],
+        title: const Text('Fuente 2'),
+        content: Text(
+          [
+            'yadda',
+            'yadda',
+            'yadda',
+          ].join('\n'),
+        ),
       ),
     ],
-    prayer: [
-      'Padre nuestro que estás en los cielos, santificado sea tu nombre.',
-      'Venga tu reino.',
-      'Hágase tu voluntad, como en el cielo, así también en la tierra.',
-      'Danos hoy nuestro pan de cada día.',
-      'Y perdónanos nuestras deudas, como también nosotros perdonamos a nuestros deudores.',
-      'Y no nos metas en tentación, mas líbranos del mal; porque tuyo es el reino, y el poder, y la gloria, por todos los siglos.',
-      'Amén.',
-    ],
-    notes: [
-      'esta es una nota al pie',
-      'y ahora otro',
-    ],
+    prayer: Text(
+      [
+        'Padre nuestro que estás en los cielos, santificado sea tu nombre.',
+        'Venga tu reino.',
+        'Hágase tu voluntad, como en el cielo, así también en la tierra.',
+        'Danos hoy nuestro pan de cada día.',
+        'Y perdónanos nuestras deudas, como también nosotros perdonamos a nuestros deudores.',
+        'Y no nos metas en tentación, mas líbranos del mal; porque tuyo es el reino, y el poder, y la gloria, por todos los siglos.',
+        'Amén.',
+      ].join('\n'),
+    ),
+    notes: const Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text('esta es una nota al pie'),
+        SizedBox(height: 50.0),
+        Text('y ahora otro'),
+        SizedBox(height: 50.0),
+      ],
+    ),
   ),
 ];
 

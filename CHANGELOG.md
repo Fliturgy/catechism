@@ -12,6 +12,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Configuration option to show/hide the Settings menu item in the Drawer
 - Configuration option to show/hide the Language Selector in the Settings page
 
+### Changed
+
+- **Breaking:** the following Question properties are now Widgets:
+  - title
+  - titleShort
+  - question
+  - answer
+  - notes
+  - prayer
+- **Breaking:** the following QuestionReference properties are now Widgets:
+  - title
+  - content
+- **Breaking:** the following CustomPageData properties are now Widgets:
+  - title
+  - content
+
 ## [0.0.16]
 
 ### Added

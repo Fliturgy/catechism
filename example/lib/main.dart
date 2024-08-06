@@ -200,26 +200,26 @@ final LocalizedCustomPages localizedCustomPages = LocalizedCustomPages(
 
 final List<CustomPageData> enCustomPages = [
   CustomPageData(
-    title: 'About',
-    content: ['This is an example of a catechism app.'],
+    title: const Text('About'),
+    content: const Text('This is an example of a catechism app.'),
     routeName: 'about',
   ),
   CustomPageData(
-    title: 'Privacy Policy',
-    content: ['We don\'t collect any data.'],
+    title: const Text('Privacy Policy'),
+    content: const Text('We don\'t collect any data.'),
     routeName: 'privacy',
   ),
 ];
 
 final List<CustomPageData> esCustomPages = [
   CustomPageData(
-    title: 'Acerca de esta aplicación',
-    content: ['Este es un ejemplo de una aplicación de catecismo.'],
+    title: const Text('Acerca de esta aplicación'),
+    content: const Text('Este es un ejemplo de una aplicación de catecismo.'),
     routeName: 'about-es',
   ),
   CustomPageData(
-    title: 'Política de privacidad',
-    content: ['No recopilamos ningún dato.'],
+    title: const Text('Política de privacidad'),
+    content: const Text('No recopilamos ningún dato.'),
     routeName: 'privacy-es',
   ),
 ];

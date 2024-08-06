@@ -7,10 +7,10 @@ class CustomPageData {
   final IconData? icon;
 
   /// The title property is used to create the title for the screen.
-  final String title;
+  final Widget title;
 
   /// The content property is used to create the content for the screen.
-  final List<String> content;
+  final Widget content;
 
   /// The routeName property is used to create the route name for the screen.
   final String routeName;

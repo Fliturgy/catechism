@@ -40,9 +40,9 @@ class CustomPageScreen extends ConsumerWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                customPageData.title,
-                style: Theme.of(context).textTheme.headlineLarge,
+              DefaultTextStyle(
+                child: customPageData.title,
+                style: Theme.of(context).textTheme.headlineLarge!,
               ),
               SizedBox(
                 height: 10.0,
@@ -53,11 +53,10 @@ class CustomPageScreen extends ConsumerWidget {
               SizedBox(
                 height: 10.0,
               ),
-              Text(
-                customPageData.content.join("\n\n"),
+              DefaultTextStyle(
+                child: customPageData.content,
                 softWrap: true,
-                // textAlign: TextAlign.justify,
-                style: Theme.of(context).textTheme.bodyLarge,
+                style: Theme.of(context).textTheme.bodyLarge!,
               ),
               SizedBox(
                 height: 15.0,

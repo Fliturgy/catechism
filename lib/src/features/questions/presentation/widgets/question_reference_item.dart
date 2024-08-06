@@ -28,6 +28,7 @@ class QuestionReferenceItem extends StatelessWidget {
         ),
         DefaultTextStyle(
           child: reference.content!,
+          softWrap: true,
           style: Theme.of(context).textTheme.bodyLarge!,
         ),
         SizedBox(

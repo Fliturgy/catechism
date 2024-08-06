@@ -36,6 +36,7 @@ class QuestionNotesScreen extends StatelessWidget {
             ),
             child: DefaultTextStyle(
               child: question.notes!,
+              softWrap: true,
               style: Theme.of(context).textTheme.bodyLarge!,
             ),
           ),

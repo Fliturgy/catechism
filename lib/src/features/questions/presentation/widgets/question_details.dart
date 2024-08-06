@@ -84,6 +84,7 @@ class _QuestionDetailsState extends State<QuestionDetails> {
                     offstage: !_isVisible && configuration.allowHideAnswer,
                     child: DefaultTextStyle(
                       child: widget.question.answer,
+                      softWrap: true,
                       style: Theme.of(context).textTheme.bodyLarge!,
                     ),
                   ),

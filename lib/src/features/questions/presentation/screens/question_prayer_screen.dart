@@ -36,6 +36,7 @@ class QuestionPrayerScreen extends StatelessWidget {
             ),
             child: DefaultTextStyle(
               child: question.prayer!,
+              softWrap: true,
               style: Theme.of(context).textTheme.bodyLarge!,
             ),
           ),

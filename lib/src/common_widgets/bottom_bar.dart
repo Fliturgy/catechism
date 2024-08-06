@@ -29,7 +29,7 @@ class BottomBar extends ConsumerWidget {
           // Commentary
           if (configuration.displayQuestionNotes)
             IconButton(
-              onPressed: question.notes.isEmpty
+              onPressed: question.notes == null
                   ? null
                   : () => context.goNamed(
                         AppRoute.notes.name,
@@ -42,7 +42,7 @@ class BottomBar extends ConsumerWidget {
           // Prayer
           if (configuration.displayQuestionPrayer)
             IconButton(
-              onPressed: question.prayer.isEmpty
+              onPressed: question.prayer == null
                   ? null
                   : () => context.goNamed(
                         AppRoute.prayer.name,

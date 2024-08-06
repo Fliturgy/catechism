@@ -9,18 +9,18 @@ class Question with ChangeNotifier {
 
   /// The title property is used to create the details page title for the
   /// question. This is an optional property.
-  final String? title;
+  final Widget? title;
 
   /// The titleShort property is used to create the list page title for the
   /// question and is optionally used on the details page. This is an optional
   /// property.
-  final String? titleShort;
+  final Widget? titleShort;
 
   /// The question property is used to create the question.
-  final String question;
+  final Widget question;
 
   /// The answer property is used to create the answer for the question.
-  final String answer;
+  final Widget answer;
 
   /// The references property is used to create the references for the question.
   /// This is an optional property.
@@ -28,11 +28,11 @@ class Question with ChangeNotifier {
 
   /// The notes property is used to create the notes for the question. This is
   /// an optional property.
-  final List<String> notes;
+  final Widget? notes;
 
   /// The prayer property is used to create the prayer for the question. This is
   /// an optional property.
-  final List<String> prayer;
+  final Widget? prayer;
 
   /// The image property is used to create the image for the question. This is
   /// an optional property.
@@ -47,8 +47,8 @@ class Question with ChangeNotifier {
     required this.question,
     required this.answer,
     this.references = const [],
-    this.notes = const [],
-    this.prayer = const [],
+    this.notes,
+    this.prayer,
     this.image,
   });
 }

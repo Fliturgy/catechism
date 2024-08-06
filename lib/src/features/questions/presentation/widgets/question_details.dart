@@ -41,23 +41,35 @@ class _QuestionDetailsState extends State<QuestionDetails> {
               return Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  if (configuration.displayQuestionTitleInDetails)
-                    Text(
-                      widget.question.title ?? "",
-                      style: Theme.of(context).textTheme.displaySmall,
+                  if (configuration.displayQuestionTitleInDetails &&
+                      widget.question.title != null)
+                    DefaultTextStyle(
+                      child: widget.question.title!,
+                      style: Theme.of(context).textTheme.displaySmall!,
                     ),
                   if (configuration.displayQuestionTitleInDetails &&
                       widget.question.title != null)
                     SizedBox(
                       height: 5.0,
                     ),
-                  Text(
-                    configuration.displayQuestionTitleShortInDetails &&
-                            widget.question.titleShort != null &&
-                            widget.question.titleShort != ""
-                        ? '${widget.question.titleShort} ${widget.question.question}'
-                        : widget.question.question,
-                    style: Theme.of(context).textTheme.headlineLarge,
+                  Row(
+                    children: [
+                      if (configuration.displayQuestionTitleShortInDetails &&
+                          widget.question.titleShort != null)
+                        Padding(
+                          padding: const EdgeInsets.only(right: 8.0),
+                          child: DefaultTextStyle(
+                            child: widget.question.titleShort!,
+                            style: Theme.of(context).textTheme.headlineLarge!,
+                          ),
+                        ),
+                      Expanded(
+                        child: DefaultTextStyle(
+                          child: widget.question.question,
+                          style: Theme.of(context).textTheme.headlineLarge!,
+                        ),
+                      ),
+                    ],
                   ),
                   SizedBox(
                     height: 10.0,
@@ -70,10 +82,10 @@ class _QuestionDetailsState extends State<QuestionDetails> {
                   ),
                   Offstage(
                     offstage: !_isVisible && configuration.allowHideAnswer,
-                    child: Text(
-                      widget.question.answer,
+                    child: DefaultTextStyle(
+                      child: widget.question.answer,
                       softWrap: true,
-                      style: Theme.of(context).textTheme.bodyLarge,
+                      style: Theme.of(context).textTheme.bodyLarge!,
                     ),
                   ),
                   SizedBox(
@@ -84,20 +96,18 @@ class _QuestionDetailsState extends State<QuestionDetails> {
                     child: Localizations.override(
                       context: context,
                       locale: Locale(ref.watch(languageProvider)),
-                      child: Builder(
-                        builder: (context) {
-                          return OutlinedButton(
-                            child: Text(_isVisible
-                                ? AppLocalizations.of(context)!.hideAnswer
-                                : AppLocalizations.of(context)!.showAnswer),
-                            onPressed: () {
-                              setState(() {
-                                _isVisible = !_isVisible;
-                              });
-                            },
-                          );
-                        }
-                      ),
+                      child: Builder(builder: (context) {
+                        return OutlinedButton(
+                          child: Text(_isVisible
+                              ? AppLocalizations.of(context)!.hideAnswer
+                              : AppLocalizations.of(context)!.showAnswer),
+                          onPressed: () {
+                            setState(() {
+                              _isVisible = !_isVisible;
+                            });
+                          },
+                        );
+                      }),
                     ),
                   ),
                   SizedBox(

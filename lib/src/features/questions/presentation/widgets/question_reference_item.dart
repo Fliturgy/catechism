@@ -13,9 +13,9 @@ class QuestionReferenceItem extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          reference.title,
-          style: Theme.of(context).textTheme.headlineLarge,
+        DefaultTextStyle(
+          child: reference.title,
+          style: Theme.of(context).textTheme.headlineLarge!,
         ),
         SizedBox(
           height: 5.0,
@@ -26,10 +26,10 @@ class QuestionReferenceItem extends StatelessWidget {
         SizedBox(
           height: 10.0,
         ),
-        Text(
-          reference.content.join('\n'),
+        DefaultTextStyle(
+          child: reference.content!,
           softWrap: true,
-          style: Theme.of(context).textTheme.bodyLarge,
+          style: Theme.of(context).textTheme.bodyLarge!,
         ),
         SizedBox(
           height: 50.0,

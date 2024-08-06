@@ -29,9 +29,9 @@ class CatechismDrawer extends ConsumerWidget {
                       size: 22,
                     )
                   : null,
-              title: Text(
-                customPage.title,
-                style: Theme.of(context).textTheme.bodyMedium,
+              title: DefaultTextStyle(
+                child: customPage.title,
+                style: Theme.of(context).textTheme.bodyMedium!,
               ),
               onTap: () {
                 Scaffold.of(context).openEndDrawer();

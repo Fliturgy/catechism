@@ -26,22 +26,22 @@ class QuestionListItem extends ConsumerWidget {
       leading: configuration.displayQuestionTitleShortInList
           ? Container(
               width: 40,
-              child: Text(
-                question.titleShort ?? "",
-                style: Theme.of(context).textTheme.headlineMedium,
+              child: DefaultTextStyle(
+                child: question.titleShort!,
+                style: Theme.of(context).textTheme.headlineMedium!,
                 textAlign: configuration.questionShortTitleListAlignment,
               ),
             )
           : null,
-      title: Text(
-        question.question,
-        style: Theme.of(context).textTheme.headlineSmall,
+      title: DefaultTextStyle(
+        child: question.question,
+        style: Theme.of(context).textTheme.headlineSmall!,
       ),
       subtitle: configuration.displayQuestionDetailsAsSeparatePage
           ? null
-          : Text(
-              question.answer,
-              style: Theme.of(context).textTheme.bodySmall,
+          : DefaultTextStyle(
+              child: question.answer,
+              style: Theme.of(context).textTheme.bodySmall!,
             ),
       onTap: configuration.displayQuestionDetailsAsSeparatePage
           ? () => context.goNamed(

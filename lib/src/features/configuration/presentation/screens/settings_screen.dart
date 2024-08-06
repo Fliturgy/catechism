@@ -1,4 +1,5 @@
 import 'package:catechism/src/common_widgets/top_bar.dart';
+import 'package:catechism/src/features/configuration/data/configuration_provider.dart';
 import 'package:catechism/src/features/configuration/data/language_provider.dart';
 import 'package:catechism/src/features/configuration/data/titles_provider.dart';
 import 'package:catechism/src/features/configuration/presentation/widgets/language_selector.dart';
@@ -47,13 +48,17 @@ class SettingsScreen extends ConsumerWidget {
                   SizedBox(
                     height: 10.0,
                   ),
-                  SizedBox(
-                    width: 300,
-                    child: LanguageSelector(),
-                  ),
-                  SizedBox(
-                    height: 15.0,
-                  ),
+                  if (ref
+                      .watch(configurationProvider!)
+                      .showSettingsLanguageSelector) ...[
+                    SizedBox(
+                      width: 300,
+                      child: LanguageSelector(),
+                    ),
+                    SizedBox(
+                      height: 15.0,
+                    ),
+                  ],
                 ],
               );
             }),

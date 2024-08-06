@@ -163,7 +163,6 @@ final configuration = CatechismConfiguration(
   displayQuestionTitleShortInDetails: false,
   displayQuestionPrayer: true,
   displayQuestionNotes: true,
-  settingsIcon: const Icon(Icons.settings),
 );
 
 final List<Locale> locales = [

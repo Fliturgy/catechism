@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [unreleased]
 
+### Added
+
+- Configuration option to show/hide the Settings menu item in the Drawer
+- Configuration option to show/hide the Language Selector in the Settings page
+
 ## [0.0.16]
 
 ### Added

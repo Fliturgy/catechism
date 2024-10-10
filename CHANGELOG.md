@@ -7,6 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [unreleased]
 
+## [0.0.18]
+
+### Added
+
+- **Breaking:** new required defaultAppTitle property in the Configuration class
+
+### Changed
+
+- **Breaking:** the TopBar title property is now a Widget instead of a list of strings
+- Dependency upgrades:
+  - sdk: 3.4.3 -> 3.5.3
+  - go_router: 14.2.1 -> 14.3.0
+  - lints: 4.0.0 -> 5.0.0
+  - flutter_lints: 4.0.0 -> 5.0.0
+  - test: 1.25.2 -> 1.25.7
+
 ## [0.0.17]
 
 ### Added
@@ -222,7 +238,8 @@ Initial Version
     - displaying the question number in the details screen
     - displaying the question title in the details screen
 
-[unreleased]: https://github.com/fliturgy/catechism/compare/v0.0.17...HEAD
+[unreleased]: https://github.com/fliturgy/catechism/compare/v0.0.18...HEAD
+[0.0.18]: https://github.com/fliturgy/catechism/compare/v0.0.17...v0.0.18
 [0.0.17]: https://github.com/fliturgy/catechism/compare/v0.0.16...v0.0.17
 [0.0.16]: https://github.com/fliturgy/catechism/compare/v0.0.15...v0.0.16
 [0.0.15]: https://github.com/fliturgy/catechism/compare/0.0.14...v0.0.15

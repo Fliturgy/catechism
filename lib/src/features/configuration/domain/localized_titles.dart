@@ -1,13 +1,15 @@
+import 'package:catechism/src/features/configuration/domain/title_data.dart';
+
 class LocalizedTitles {
-  final Map<String, List<String>> localizedTitles;
-  final List<String> defaultTitles;
+  final Map<String, TitleData> localizedTitles;
+  final TitleData defaultTitle;
 
   LocalizedTitles({
     required this.localizedTitles,
-    required this.defaultTitles,
+    required this.defaultTitle,
   });
 
-  List<String> getTitles(String languageCode) {
-    return localizedTitles[languageCode] ?? defaultTitles;
+  TitleData getTitle(String languageCode) {
+    return localizedTitles[languageCode] ?? defaultTitle;
   }
 }

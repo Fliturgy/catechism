@@ -1,5 +1,6 @@
 import 'package:catechism/src/common_widgets/top_bar.dart';
 import 'package:catechism/src/features/configuration/data/language_provider.dart';
+import 'package:catechism/src/features/configuration/domain/title_data.dart';
 import 'package:catechism/src/features/questions/data/question_provider.dart';
 import 'package:catechism/src/features/questions/presentation/widgets/question_reference_item.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +20,10 @@ class QuestionReferencesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: TopBar(
-        [],
+        TitleData(
+          title: Text(''),
+          height: 80.0,
+        ),
         hasBackButton: false,
         hasCloseButton: true,
       ),

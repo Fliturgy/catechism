@@ -15,11 +15,11 @@ class QuestionListScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final languageCode = ref.watch(languageProvider);
     final titles = ref.watch(titlesProvider!);
-    final localeTitles = titles.getTitles(languageCode);
+    final localeTitle = titles.getTitle(languageCode);
 
     return Scaffold(
       drawer: CatechismDrawer(),
-      appBar: TopBar(localeTitles),
+      appBar: TopBar(localeTitle),
       body: Consumer(
         builder: (context, ref, child) {
           final questions = ref.watch(questionProvider!);

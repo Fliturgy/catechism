@@ -4,6 +4,7 @@ library;
 export 'src/application.dart';
 export 'src/features/configuration/domain/configuration.dart';
 export 'src/features/configuration/domain/localized_titles.dart';
+export 'src/features/configuration/domain/title_data.dart';
 export 'src/features/custom_pages/domain/custom_page_data.dart';
 export 'src/features/custom_pages/domain/localized_custom_pages.dart';
 export 'src/features/questions/domain/localized_questions.dart';

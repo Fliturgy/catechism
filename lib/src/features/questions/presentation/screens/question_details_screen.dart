@@ -28,11 +28,11 @@ class QuestionDetailsScreen extends ConsumerWidget {
     );
     final languageCode = ref.watch(languageProvider);
     final titles = ref.watch(titlesProvider!);
-    final localeTitles = titles.getTitles(languageCode);
+    final localeTitle = titles.getTitle(languageCode);
 
     return Scaffold(
       appBar: TopBar(
-        localeTitles,
+        localeTitle,
         hasBackButton: true,
       ),
       body: Consumer(builder: (context, ref, _) {

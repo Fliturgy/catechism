@@ -24,11 +24,11 @@ class CustomPageScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final languageCode = ref.watch(languageProvider);
     final titles = ref.watch(titlesProvider!);
-    final localeTitles = titles.getTitles(languageCode);
+    final localeTitle = titles.getTitle(languageCode);
 
     return Scaffold(
       appBar: TopBar(
-        localeTitles,
+        localeTitle,
         hasBackButton: true,
       ),
       body: SingleChildScrollView(

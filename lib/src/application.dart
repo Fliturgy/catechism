@@ -55,7 +55,7 @@ class CatechismApp extends StatelessWidget {
     final goRouter = CatechismRouter(customPages: customPages).getRouter();
 
     return MaterialApp.router(
-      title: titles.defaultTitles.join(" "),
+      title: configuration.defaultAppTitle,
       theme: themeData,
       supportedLocales: supportedLocales,
       localizationsDelegates: [

@@ -26,10 +26,39 @@ class ExampleCatechismApp extends StatelessWidget {
 
 final LocalizedTitles localizedTitles = LocalizedTitles(
   localizedTitles: {
-    'en': ['Example Catechism App'],
-    'es': ['Ejemplo de aplicación', 'de catecismo'],
+    'en': TitleData(
+      title: FittedBox(
+        fit: BoxFit.scaleDown,
+        child: Text('Example Catechism App'),
+      ),
+      height: 80.0,
+    ),
+    'es': TitleData(
+      title: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text('Ejemplo de aplicación'),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text('de catecismo'),
+            ),
+          ),
+        ],
+      ),
+      height: 140.0,
+    ),
   },
-  defaultTitles: ['Example Catechism App'],
+  defaultTitle: TitleData(
+    title: Text('Example Catechism App'),
+    height: 80.0,
+  ),
 );
 
 final LocalizedQuestions localizedQuestions = LocalizedQuestions(
@@ -176,6 +205,11 @@ final ThemeData themeData = ThemeData(
     headlineLarge: TextStyle(
       fontSize: 24.0,
     ),
+    titleLarge: TextStyle(
+      fontSize: 24.0,
+      fontWeight: FontWeight.bold,
+      letterSpacing: 1.5,
+    ),
   ),
 );
 
@@ -183,6 +217,7 @@ final configuration = CatechismConfiguration(
   displayQuestionTitleShortInDetails: false,
   displayQuestionPrayer: true,
   displayQuestionNotes: true,
+  defaultAppTitle: 'Example Catechism App',
 );
 
 final List<Locale> locales = [

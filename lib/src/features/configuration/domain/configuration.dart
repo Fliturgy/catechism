@@ -74,6 +74,10 @@ class CatechismConfiguration {
   /// true.
   final bool showSettingsLanguageSelector;
 
+  /// The defaultAppTitle property is used to determine the default title of
+  /// the app.
+  final String defaultAppTitle;
+
   /// The CatechismConfiguration constructor is used to create a new instance of
   /// the CatechismConfiguration class.
   CatechismConfiguration({
@@ -92,6 +96,7 @@ class CatechismConfiguration {
     this.settingsIcon,
     this.showSettings = true,
     this.showSettingsLanguageSelector = true,
+    required this.defaultAppTitle,
   })  : questionReferencesIcon =
             questionReferencesIcon ?? Icon(Icons.menu_book_outlined),
         questionNotesIcon =
